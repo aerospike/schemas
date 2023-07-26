@@ -7,11 +7,6 @@
     "service": {
       "type": "object",
       "additionalProperties": false,
-      "oneOf": [{
-        "required": ["feature-key-file"]
-      }, {
-        "required": ["feature-key-files"]
-      }],
       "properties": {
         "query-buf-size": {
           "type": "integer",
@@ -2138,7 +2133,7 @@
             "type": "integer",
             "default": 256,
             "minimum": 16,
-            "maximum": 4096,
+            "maximum": 268453456,
             "description": "",
             "dynamic": false
           },

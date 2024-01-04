@@ -1397,7 +1397,7 @@
               },
               "description": "",
               "dynamic": false,
-              "enterpriseOnly": false,
+              "enterpriseOnly": true,
               "default": []
             },
             "tls-name": {
@@ -1405,7 +1405,7 @@
               "default": "",
               "description": "",
               "dynamic": false,
-              "enterpriseOnly": false
+              "enterpriseOnly": true
             },
             "tls-port": {
               "type": "integer",
@@ -1414,7 +1414,7 @@
               "maximum": 65535,
               "description": "",
               "dynamic": false,
-              "enterpriseOnly": false
+              "enterpriseOnly": true
             }
           }
         },

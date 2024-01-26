@@ -1470,7 +1470,7 @@
                 },
                 "data-in-memory": {
                   "type": "boolean",
-                  "default": true,
+                  "default": false,
                   "description": "",
                   "dynamic": false
                 },
@@ -1584,7 +1584,7 @@
                 },
                 "post-write-queue": {
                   "type": "integer",
-                  "default": 0,
+                  "default": 256,
                   "minimum": 0,
                   "maximum": 4096,
                   "description": "",
@@ -1791,7 +1791,7 @@
           "partition-tree-sprigs": {
             "type": "integer",
             "default": 256,
-            "minimum": 16,
+            "minimum": 256,
             "maximum": 268453456,
             "description": "",
             "dynamic": false

@@ -90,7 +90,7 @@
         },
         "feature-key-file": {
           "type": "string",
-          "default": "/opt/aerospike/data/features.conf",
+          "default": "/etc/aerospike/features.conf",
           "description": "",
           "dynamic": false
         },
@@ -101,7 +101,7 @@
           },
           "description": "",
           "dynamic": false,
-          "default": ["/opt/aerospike/data/features.conf"]
+          "default": ["/etc/aerospike/features.conf"]
         },
         "group": {
           "type": "string",
@@ -189,7 +189,7 @@
         },
         "node-id": {
           "type": "string",
-          "default": "BB9C0E8CD290C00",
+          "default": "BB9040011AC4202",
           "description": "",
           "dynamic": false
         },
@@ -395,373 +395,373 @@
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "alloc": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "arenax": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "hardware": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "msg": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "os": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "secrets": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "socket": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "tls": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "vault": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "vmapx": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "xmem": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "aggr": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "appeal": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "as": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "audit": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "batch": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "batch-sub": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "bin": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "config": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "clustering": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "drv-mem": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "drv_pmem": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "drv_ssd": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "exchange": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "exp": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "fabric": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "flat": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "geo": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "hb": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "health": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "hlc": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "index": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "info": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "info-port": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "key-busy": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "migrate": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "namespace": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "nsup": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "particle": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "partition": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "proto": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "proxy": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "proxy-divert": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "query": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "record": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "roster": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "rw": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "rw-client": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "security": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "service": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "service-list": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "sindex": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "skew": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "smd": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "storage": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "truncate": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "tsvc": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "udf": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "xdr": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "xdr-client": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "any": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
-            "default": "INFO"
+            "default": "CRITICAL"
           },
           "facility": {
             "enum": ["auth", "authpriv", "cron", "daemon", "ftp", "kern", "lpr", "mail", "news", "syslog", "user", "uucp", "local0", "local1", "local2", "local3", "local4", "local5", "local6", "local7"],
@@ -1546,7 +1546,7 @@
           "partition-tree-sprigs": {
             "type": "integer",
             "default": 256,
-            "minimum": 16,
+            "minimum": 256,
             "maximum": 268453456,
             "description": "",
             "dynamic": false
@@ -2356,9 +2356,9 @@
                 },
                 "post-write-queue": {
                   "type": "integer",
-                  "default": 0,
+                  "default": 256,
                   "minimum": 0,
-                  "maximum": 4096,
+                  "maximum": 8192,
                   "description": "",
                   "dynamic": true
                 },

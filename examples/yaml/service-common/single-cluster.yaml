@@ -1,0 +1,20 @@
+aerospike:
+  label: exampleClusterLabel1
+  seed-nodes:
+    - host-name: "aerospike1"
+      port: 3000
+      tls-name: "commonTlsName1"
+    - host-name: "aerospike2"
+      port: 3000
+      tls-name: "commonTlsName1"
+  conn-timeout: 15
+  use-services-alternate: false
+  credentials:
+    user: "admin"
+    password: "admin123"
+    auth-mode: "EXTERNAL"
+  tls:
+    ca-file: "/etc/aerospike/certs/ca.crt"
+    ca-path: "/etc/aerospike/certs/ca/"
+    cert-file: "/etc/aerospike/certs/aerospike.crt"
+    key-file: "/etc/aerospike/certs/aerospike.key"

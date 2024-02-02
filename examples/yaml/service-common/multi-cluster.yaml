@@ -1,0 +1,39 @@
+aerospike-clusters:
+  - label: exampleClusterLabel1
+    seed-nodes:
+      - host-name: "aerospike1"
+        port: 3000
+        tls-name: "commonTlsName1"
+      - host-name: "aerospike2"
+        port: 3000
+        tls-name: "commonTlsName1"
+    conn-timeout: 15
+    use-services-alternate: false
+    credentials:
+      user: "admin"
+      password: "admin123"
+      auth-mode: "EXTERNAL"
+    tls:
+      ca-file: "/etc/aerospike/certs/ca.crt"
+      ca-path: "/etc/aerospike/certs/ca/"
+      cert-file: "/etc/aerospike/certs/aerospike.crt"
+      key-file: "/etc/aerospike/certs/aerospike.key"
+
+  - label: exampleClusterLabel2
+    seed-nodes:
+      - host-name: "aerospike3"
+        port: 9999
+        tls-name: "commonTlsName2"
+      - host-name: "aerospike4"
+        port: 8888
+        tls-name: "commonTlsName2"
+    conn-timeout: 20
+    use-services-alternate: true
+    credentials:
+      user: "user2"
+      password-file: "/etc/aerospike/secret"
+      auth-mode: "INTERNAL"
+    tls:
+      ca-file: "/etc/ssl/certs/ca-certificates.crt"
+      cert-file: "/etc/aerospike/certs/cert.pem"
+      key-file: "/etc/aerospike/certs/key.pem"

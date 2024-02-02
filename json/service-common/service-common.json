@@ -1,0 +1,59 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "aerospike": {
+      "$ref": "#/definitions/clusterConfig"
+    },
+    "aerospike-clusters": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/clusterConfig"
+      }
+    }
+  },
+  "additionalProperties": true,
+  "definitions": {
+    "clusterConfig": {
+      "type": "object",
+      "properties": {
+        "label": { "type": "string" },
+        "seed-nodes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "host-name": { "type": "string" },
+              "port": { "type": "integer", "minimum": 1 },
+              "tls-name": { "type": "string" }
+            },
+            "required": ["host-name", "tls-name"]
+          }
+        },
+        "conn-timeout": { "type": "integer", "minimum": 1 },
+        "use-services-alternate": { "type": "boolean" },
+        "credentials": {
+          "type": "object",
+          "properties": {
+            "user": { "type": "string" },
+            "password": { "type": "string" },
+            "password-file": { "type": "string" },
+            "auth-mode": { "type": "string" }
+          },
+          "required": ["user"]
+        },
+        "tls": {
+          "type": "object",
+          "properties": {
+            "ca-file": { "type": "string" },
+            "ca-path": { "type": "string" },
+            "cert-file": { "type": "string" },
+            "key-file": { "type": "string" }
+          }
+        }
+      },
+      "required": ["label", "seed-nodes", "credentials", "tls"]
+    }
+  },
+  "required": []
+}

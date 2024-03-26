@@ -2186,8 +2186,8 @@
                 "flush-size": {
                   "type": "integer",
                   "default": 1048576,
-                  "minimum": 0,
-                  "maximum": 4294967295,
+                  "minimum": 4096,
+                  "maximum": 8388608,
                   "description": "",
                   "dynamic": true
                 },

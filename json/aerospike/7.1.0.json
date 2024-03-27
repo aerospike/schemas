@@ -38,6 +38,14 @@
           "description": "",
           "dynamic": true
         },
+        "batch-max-requests": {
+          "type": "integer",
+          "default": 0,
+          "minimum": 0,
+          "maximum": 4294967295,
+          "description": "",
+          "dynamic": true
+        },
         "batch-max-unused-buffers": {
           "type": "integer",
           "default": 256,
@@ -1367,14 +1375,6 @@
             "default": 10000,
             "minimum": 1,
             "maximum": 1000000,
-            "description": "",
-            "dynamic": true
-          },
-          "batch-max-requests": {
-            "type": "integer",
-            "default": 0,
-            "minimum": 0,
-            "maximum": 4294967295,
             "description": "",
             "dynamic": true
           },

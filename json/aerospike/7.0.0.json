@@ -7,18 +7,21 @@
     "service": {
       "type": "object",
       "additionalProperties": false,
+      "enterpriseOnly": false,
       "required": ["cluster-name"],
       "properties": {
         "advertise-ipv6": {
           "type": "boolean",
           "default": false,
           "description": "",
-          "dynamic": true
+          "dynamic": true,
+          "enterpriseOnly": false
         },
         "auto-pin": {
           "type": "string",
           "description": "",
           "dynamic": false,
+          "enterpriseOnly": false,
           "default": "none",
           "enum": ["none", "cpu", "numa", "adq"]
         },
@@ -28,7 +31,8 @@
           "minimum": 1,
           "maximum": 256,
           "description": "",
-          "dynamic": true
+          "dynamic": true,
+          "enterpriseOnly": false
         },
         "batch-max-buffers-per-queue": {
           "type": "integer",
@@ -36,7 +40,8 @@
           "minimum": 0,
           "maximum": 4294967295,
           "description": "",
-          "dynamic": true
+          "dynamic": true,
+          "enterpriseOnly": false
         },
         "batch-max-unused-buffers": {
           "type": "integer",
@@ -44,55 +49,64 @@
           "minimum": 0,
           "maximum": 4294967295,
           "description": "",
-          "dynamic": true
+          "dynamic": true,
+          "enterpriseOnly": false
         },
         "cluster-name": {
           "type": "string",
           "default": "",
           "description": "",
-          "dynamic": true
+          "dynamic": true,
+          "enterpriseOnly": false
         },
         "debug-allocations": {
           "type": "boolean",
           "default": false,
           "description": "",
-          "dynamic": false
+          "dynamic": false,
+          "enterpriseOnly": false
         },
         "disable-udf-execution": {
           "type": "boolean",
           "default": false,
           "description": "",
-          "dynamic": false
+          "dynamic": false,
+          "enterpriseOnly": false
         },
         "enable-benchmarks-fabric": {
           "type": "boolean",
           "default": false,
           "description": "",
-          "dynamic": true
+          "dynamic": true,
+          "enterpriseOnly": false
         },
         "enable-health-check": {
           "type": "boolean",
           "default": false,
           "description": "",
-          "dynamic": true
+          "dynamic": true,
+          "enterpriseOnly": false
         },
         "enable-hist-info": {
           "type": "boolean",
           "default": false,
           "description": "",
-          "dynamic": true
+          "dynamic": true,
+          "enterpriseOnly": false
         },
         "enforce-best-practices": {
           "type": "boolean",
           "default": false,
           "description": "",
-          "dynamic": false
+          "dynamic": false,
+          "enterpriseOnly": false
         },
         "feature-key-file": {
           "type": "string",
           "default": "/etc/aerospike/features.conf",
           "description": "",
-          "dynamic": false
+          "dynamic": false,
+          "enterpriseOnly": true
         },
         "feature-key-files": {
           "type": "array",
@@ -101,19 +115,22 @@
           },
           "description": "",
           "dynamic": false,
+          "enterpriseOnly": true,
           "default": ["/etc/aerospike/features.conf"]
         },
         "group": {
           "type": "string",
           "default": "",
           "description": "",
-          "dynamic": false
+          "dynamic": false,
+          "enterpriseOnly": false
         },
         "indent-allocations": {
           "type": "boolean",
           "default": false,
           "description": "",
-          "dynamic": false
+          "dynamic": false,
+          "enterpriseOnly": false
         },
         "info-max-ms": {
           "type": "integer",
@@ -121,7 +138,8 @@
           "minimum": 500,
           "maximum": 10000,
           "description": "",
-          "dynamic": true
+          "dynamic": true,
+          "enterpriseOnly": false
         },
         "info-threads": {
           "type": "integer",
@@ -129,31 +147,36 @@
           "minimum": 0,
           "maximum": 2147483647,
           "description": "",
-          "dynamic": true
+          "dynamic": true,
+          "enterpriseOnly": false
         },
         "keep-caps-ssd-health": {
           "type": "boolean",
           "default": false,
           "description": "",
-          "dynamic": false
+          "dynamic": false,
+          "enterpriseOnly": false
         },
         "log-local-time": {
           "type": "boolean",
           "default": false,
           "description": "",
-          "dynamic": false
+          "dynamic": false,
+          "enterpriseOnly": false
         },
         "log-millis": {
           "type": "boolean",
           "default": false,
           "description": "",
-          "dynamic": false
+          "dynamic": false,
+          "enterpriseOnly": false
         },
         "microsecond-histograms": {
           "type": "boolean",
           "default": false,
           "description": "",
-          "dynamic": true
+          "dynamic": true,
+          "enterpriseOnly": false
         },
         "migrate-fill-delay": {
           "type": "integer",
@@ -161,7 +184,8 @@
           "minimum": 0,
           "maximum": 4294967295,
           "description": "",
-          "dynamic": true
+          "dynamic": true,
+          "enterpriseOnly": true
         },
         "migrate-max-num-incoming": {
           "type": "integer",
@@ -169,7 +193,8 @@
           "minimum": 0,
           "maximum": 256,
           "description": "",
-          "dynamic": true
+          "dynamic": true,
+          "enterpriseOnly": false
         },
         "migrate-threads": {
           "type": "integer",
@@ -177,7 +202,8 @@
           "minimum": 0,
           "maximum": 100,
           "description": "",
-          "dynamic": true
+          "dynamic": true,
+          "enterpriseOnly": false
         },
         "min-cluster-size": {
           "type": "integer",
@@ -185,37 +211,43 @@
           "minimum": 0,
           "maximum": 256,
           "description": "",
-          "dynamic": true
+          "dynamic": true,
+          "enterpriseOnly": false
         },
         "node-id": {
           "type": "string",
           "default": "BB9040011AC4202",
           "description": "",
-          "dynamic": false
+          "dynamic": false,
+          "enterpriseOnly": false
         },
         "node-id-interface": {
           "type": "string",
           "default": "",
           "description": "",
-          "dynamic": false
+          "dynamic": false,
+          "enterpriseOnly": false
         },
         "os-group-perms": {
           "type": "boolean",
           "default": false,
           "description": "",
-          "dynamic": false
+          "dynamic": false,
+          "enterpriseOnly": false
         },
         "pidfile": {
           "type": "string",
           "default": "",
           "description": "",
-          "dynamic": false
+          "dynamic": false,
+          "enterpriseOnly": false
         },
         "poison-allocations": {
           "type": "boolean",
           "default": false,
           "description": "",
-          "dynamic": false
+          "dynamic": false,
+          "enterpriseOnly": false
         },
         "proto-fd-idle-ms": {
           "type": "integer",
@@ -223,7 +255,8 @@
           "minimum": 0,
           "maximum": 2147483647,
           "description": "",
-          "dynamic": true
+          "dynamic": true,
+          "enterpriseOnly": false
         },
         "proto-fd-max": {
           "type": "integer",
@@ -231,7 +264,8 @@
           "minimum": 0,
           "maximum": 2147483647,
           "description": "",
-          "dynamic": true
+          "dynamic": true,
+          "enterpriseOnly": false
         },
         "quarantine-allocations": {
           "type": "integer",
@@ -239,7 +273,8 @@
           "minimum": 0,
           "maximum": 100000000,
           "description": "",
-          "dynamic": false
+          "dynamic": false,
+          "enterpriseOnly": false
         },
         "query-max-done": {
           "type": "integer",
@@ -247,7 +282,8 @@
           "minimum": 0,
           "maximum": 10000,
           "description": "",
-          "dynamic": true
+          "dynamic": true,
+          "enterpriseOnly": false
         },
         "query-threads-limit": {
           "type": "integer",
@@ -255,31 +291,36 @@
           "minimum": 1,
           "maximum": 1024,
           "description": "",
-          "dynamic": true
+          "dynamic": true,
+          "enterpriseOnly": false
         },
         "run-as-daemon": {
           "type": "boolean",
           "default": true,
           "description": "",
-          "dynamic": false
+          "dynamic": false,
+          "enterpriseOnly": false
         },
         "secrets-address-port": {
           "type": "string",
           "default": "",
           "description": "",
-          "dynamic": false
+          "dynamic": false,
+          "enterpriseOnly": true
         },
         "secrets-tls-context": {
           "type": "string",
           "default": "",
           "description": "",
-          "dynamic": false
+          "dynamic": false,
+          "enterpriseOnly": true
         },
         "secrets-uds-path": {
           "type": "string",
           "default": "",
           "description": "",
-          "dynamic": false
+          "dynamic": false,
+          "enterpriseOnly": true
         },
         "service-threads": {
           "type": "integer",
@@ -287,7 +328,8 @@
           "minimum": 1,
           "maximum": 4096,
           "description": "",
-          "dynamic": true
+          "dynamic": true,
+          "enterpriseOnly": false
         },
         "sindex-builder-threads": {
           "type": "integer",
@@ -295,7 +337,8 @@
           "minimum": 1,
           "maximum": 32,
           "description": "",
-          "dynamic": true
+          "dynamic": true,
+          "enterpriseOnly": false
         },
         "sindex-gc-period": {
           "type": "integer",
@@ -303,13 +346,15 @@
           "minimum": 0,
           "maximum": 4294967295,
           "description": "",
-          "dynamic": true
+          "dynamic": true,
+          "enterpriseOnly": false
         },
         "stay-quiesced": {
           "type": "boolean",
           "default": false,
           "description": "",
-          "dynamic": false
+          "dynamic": false,
+          "enterpriseOnly": true
         },
         "ticker-interval": {
           "type": "integer",
@@ -317,7 +362,8 @@
           "minimum": 0,
           "maximum": 4294967295,
           "description": "",
-          "dynamic": true
+          "dynamic": true,
+          "enterpriseOnly": false
         },
         "transaction-max-ms": {
           "type": "integer",
@@ -325,7 +371,8 @@
           "minimum": 0,
           "maximum": 4294967295,
           "description": "",
-          "dynamic": true
+          "dynamic": true,
+          "enterpriseOnly": false
         },
         "transaction-retry-ms": {
           "type": "integer",
@@ -333,54 +380,63 @@
           "minimum": 0,
           "maximum": 4294967295,
           "description": "",
-          "dynamic": true
+          "dynamic": true,
+          "enterpriseOnly": false
         },
         "user": {
           "type": "string",
           "default": "",
           "description": "",
-          "dynamic": false
+          "dynamic": false,
+          "enterpriseOnly": false
         },
         "vault-ca": {
           "type": "string",
           "default": "",
           "description": "",
-          "dynamic": false
+          "dynamic": false,
+          "enterpriseOnly": true
         },
         "vault-namespace": {
           "type": "string",
           "default": "",
           "description": "",
-          "dynamic": false
+          "dynamic": false,
+          "enterpriseOnly": true
         },
         "vault-path": {
           "type": "string",
           "default": "",
           "description": "",
-          "dynamic": false
+          "dynamic": false,
+          "enterpriseOnly": true
         },
         "vault-token-file": {
           "type": "string",
           "default": "",
           "description": "",
-          "dynamic": true
+          "dynamic": true,
+          "enterpriseOnly": true
         },
         "vault-url": {
           "type": "string",
           "default": "",
           "description": "",
-          "dynamic": false
+          "dynamic": false,
+          "enterpriseOnly": true
         },
         "work-directory": {
           "type": "string",
           "default": "/opt/aerospike",
           "description": "",
-          "dynamic": false
+          "dynamic": false,
+          "enterpriseOnly": false
         }
       }
     },
     "logging": {
       "type": "array",
+      "enterpriseOnly": false,
       "items": {
         "type": "object",
         "additionalProperties": false,
@@ -389,378 +445,441 @@
             "type": "string",
             "default": " ",
             "description": "",
-            "dynamic": false
+            "dynamic": false,
+            "enterpriseOnly": false
           },
           "misc": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "alloc": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "arenax": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "hardware": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "msg": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "os": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "secrets": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "socket": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "tls": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "vault": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "vmapx": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "xmem": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "aggr": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "appeal": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "as": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "audit": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "batch": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "batch-sub": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "bin": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "config": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "clustering": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "drv-mem": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "drv_pmem": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "drv_ssd": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "exchange": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "exp": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "fabric": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "flat": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "geo": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "hb": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "health": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "hlc": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "index": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "info": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "info-port": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "key-busy": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "migrate": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "namespace": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "nsup": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "particle": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "partition": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "proto": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "proxy": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "proxy-divert": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "query": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "record": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "roster": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "rw": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "rw-client": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "security": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "service": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "service-list": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "sindex": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "skew": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "smd": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "storage": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "truncate": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "tsvc": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "udf": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "xdr": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "xdr-client": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "any": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "CRITICAL"
           },
           "facility": {
@@ -773,13 +892,15 @@
             "type": "string",
             "default": "/dev/log",
             "description": "",
-            "dynamic": false
+            "dynamic": false,
+            "enterpriseOnly": false
           },
           "tag": {
             "type": "string",
             "default": "asd",
             "description": "",
-            "dynamic": false
+            "dynamic": false,
+            "enterpriseOnly": false
           }
         }
       }
@@ -787,11 +908,13 @@
     "network": {
       "type": "object",
       "additionalProperties": false,
+      "enterpriseOnly": false,
       "required": ["service", "heartbeat", "fabric"],
       "properties": {
         "service": {
           "type": "object",
           "additionalProperties": false,
+          "enterpriseOnly": false,
           "anyOf": [{
             "required": ["port"]
           }, {
@@ -805,6 +928,7 @@
               },
               "description": "",
               "dynamic": false,
+              "enterpriseOnly": false,
               "default": []
             },
             "access-port": {
@@ -813,7 +937,8 @@
               "minimum": 1024,
               "maximum": 65535,
               "description": "",
-              "dynamic": false
+              "dynamic": false,
+              "enterpriseOnly": false
             },
             "addresses": {
               "type": "array",
@@ -822,6 +947,7 @@
               },
               "description": "",
               "dynamic": false,
+              "enterpriseOnly": false,
               "default": []
             },
             "alternate-access-addresses": {
@@ -831,6 +957,7 @@
               },
               "description": "",
               "dynamic": false,
+              "enterpriseOnly": false,
               "default": []
             },
             "alternate-access-port": {
@@ -839,13 +966,15 @@
               "minimum": 1024,
               "maximum": 65535,
               "description": "",
-              "dynamic": false
+              "dynamic": false,
+              "enterpriseOnly": false
             },
             "disable-localhost": {
               "type": "boolean",
               "default": false,
               "description": "",
-              "dynamic": false
+              "dynamic": false,
+              "enterpriseOnly": false
             },
             "port": {
               "type": "integer",
@@ -853,7 +982,8 @@
               "minimum": 1024,
               "maximum": 65535,
               "description": "",
-              "dynamic": false
+              "dynamic": false,
+              "enterpriseOnly": false
             },
             "tls-access-addresses": {
               "type": "array",
@@ -862,6 +992,7 @@
               },
               "description": "",
               "dynamic": false,
+              "enterpriseOnly": true,
               "default": []
             },
             "tls-access-port": {
@@ -870,7 +1001,8 @@
               "minimum": 1024,
               "maximum": 65535,
               "description": "",
-              "dynamic": false
+              "dynamic": false,
+              "enterpriseOnly": true
             },
             "tls-addresses": {
               "type": "array",
@@ -879,6 +1011,7 @@
               },
               "description": "",
               "dynamic": false,
+              "enterpriseOnly": true,
               "default": []
             },
             "tls-alternate-access-addresses": {
@@ -888,6 +1021,7 @@
               },
               "description": "",
               "dynamic": false,
+              "enterpriseOnly": true,
               "default": []
             },
             "tls-alternate-access-port": {
@@ -896,13 +1030,16 @@
               "minimum": 1024,
               "maximum": 65535,
               "description": "",
-              "dynamic": false
+              "dynamic": false,
+              "enterpriseOnly": true
             },
             "tls-authenticate-client": {
+              "enterpriseOnly": true,
               "oneOf": [{
                 "type": "string",
                 "description": "",
                 "dynamic": false,
+                "enterpriseOnly": true,
                 "default": "any",
                 "enum": ["any", "false"]
               }, {
@@ -920,7 +1057,8 @@
               "type": "string",
               "default": "",
               "description": "",
-              "dynamic": false
+              "dynamic": false,
+              "enterpriseOnly": true
             },
             "tls-port": {
               "type": "integer",
@@ -928,13 +1066,15 @@
               "minimum": 1024,
               "maximum": 65535,
               "description": "",
-              "dynamic": false
+              "dynamic": false,
+              "enterpriseOnly": true
             }
           }
         },
         "heartbeat": {
           "type": "object",
           "additionalProperties": false,
+          "enterpriseOnly": false,
           "anyOf": [{
             "required": ["mode", "port"]
           }, {
@@ -948,6 +1088,7 @@
               },
               "description": "",
               "dynamic": false,
+              "enterpriseOnly": false,
               "default": []
             },
             "connect-timeout-ms": {
@@ -956,7 +1097,8 @@
               "minimum": 50,
               "maximum": 4294967295,
               "description": "",
-              "dynamic": true
+              "dynamic": true,
+              "enterpriseOnly": false
             },
             "interval": {
               "type": "integer",
@@ -964,7 +1106,8 @@
               "minimum": 50,
               "maximum": 600000,
               "description": "",
-              "dynamic": true
+              "dynamic": true,
+              "enterpriseOnly": false
             },
             "mesh-seed-address-ports": {
               "type": "array",
@@ -973,12 +1116,14 @@
               },
               "description": "",
               "dynamic": false,
+              "enterpriseOnly": false,
               "default": []
             },
             "mode": {
               "type": "string",
               "description": "",
               "dynamic": false,
+              "enterpriseOnly": false,
               "default": "",
               "enum": ["mesh", "multicast"]
             },
@@ -988,7 +1133,8 @@
               "minimum": 0,
               "maximum": 4294967295,
               "description": "",
-              "dynamic": true
+              "dynamic": true,
+              "enterpriseOnly": false
             },
             "multicast-groups": {
               "type": "array",
@@ -997,6 +1143,7 @@
               },
               "description": "",
               "dynamic": false,
+              "enterpriseOnly": false,
               "default": []
             },
             "multicast-ttl": {
@@ -1005,7 +1152,8 @@
               "minimum": 0,
               "maximum": 255,
               "description": "",
-              "dynamic": false
+              "dynamic": false,
+              "enterpriseOnly": false
             },
             "port": {
               "type": "integer",
@@ -1013,12 +1161,14 @@
               "minimum": 1024,
               "maximum": 65535,
               "description": "",
-              "dynamic": false
+              "dynamic": false,
+              "enterpriseOnly": false
             },
             "protocol": {
               "type": "string",
               "description": "",
               "dynamic": true,
+              "enterpriseOnly": false,
               "default": "v3",
               "enum": ["none", "v3"]
             },
@@ -1028,7 +1178,8 @@
               "minimum": 3,
               "maximum": 4294967295,
               "description": "",
-              "dynamic": true
+              "dynamic": true,
+              "enterpriseOnly": false
             },
             "tls-addresses": {
               "type": "array",
@@ -1037,6 +1188,7 @@
               },
               "description": "",
               "dynamic": false,
+              "enterpriseOnly": true,
               "default": []
             },
             "tls-mesh-seed-address-ports": {
@@ -1046,13 +1198,15 @@
               },
               "description": "",
               "dynamic": false,
+              "enterpriseOnly": true,
               "default": []
             },
             "tls-name": {
               "type": "string",
               "default": "",
               "description": "",
-              "dynamic": false
+              "dynamic": false,
+              "enterpriseOnly": true
             },
             "tls-port": {
               "type": "integer",
@@ -1060,13 +1214,15 @@
               "minimum": 1024,
               "maximum": 65535,
               "description": "",
-              "dynamic": false
+              "dynamic": false,
+              "enterpriseOnly": true
             }
           }
         },
         "fabric": {
           "type": "object",
           "additionalProperties": false,
+          "enterpriseOnly": false,
           "anyOf": [{
             "required": ["port"]
           }, {
@@ -1080,6 +1236,7 @@
               },
               "description": "",
               "dynamic": false,
+              "enterpriseOnly": false,
               "default": []
             },
             "channel-bulk-fds": {
@@ -1088,7 +1245,8 @@
               "minimum": 1,
               "maximum": 128,
               "description": "",
-              "dynamic": false
+              "dynamic": false,
+              "enterpriseOnly": false
             },
             "channel-bulk-recv-threads": {
               "type": "integer",
@@ -1096,7 +1254,8 @@
               "minimum": 1,
               "maximum": 128,
               "description": "",
-              "dynamic": true
+              "dynamic": true,
+              "enterpriseOnly": false
             },
             "channel-ctrl-fds": {
               "type": "integer",
@@ -1104,7 +1263,8 @@
               "minimum": 1,
               "maximum": 128,
               "description": "",
-              "dynamic": false
+              "dynamic": false,
+              "enterpriseOnly": false
             },
             "channel-ctrl-recv-threads": {
               "type": "integer",
@@ -1112,7 +1272,8 @@
               "minimum": 1,
               "maximum": 128,
               "description": "",
-              "dynamic": true
+              "dynamic": true,
+              "enterpriseOnly": false
             },
             "channel-meta-fds": {
               "type": "integer",
@@ -1120,7 +1281,8 @@
               "minimum": 1,
               "maximum": 128,
               "description": "",
-              "dynamic": false
+              "dynamic": false,
+              "enterpriseOnly": false
             },
             "channel-meta-recv-threads": {
               "type": "integer",
@@ -1128,7 +1290,8 @@
               "minimum": 1,
               "maximum": 128,
               "description": "",
-              "dynamic": true
+              "dynamic": true,
+              "enterpriseOnly": false
             },
             "channel-rw-fds": {
               "type": "integer",
@@ -1136,7 +1299,8 @@
               "minimum": 1,
               "maximum": 128,
               "description": "",
-              "dynamic": false
+              "dynamic": false,
+              "enterpriseOnly": false
             },
             "channel-rw-recv-pools": {
               "type": "integer",
@@ -1144,7 +1308,8 @@
               "minimum": 1,
               "maximum": 16,
               "description": "",
-              "dynamic": false
+              "dynamic": false,
+              "enterpriseOnly": false
             },
             "channel-rw-recv-threads": {
               "type": "integer",
@@ -1152,13 +1317,15 @@
               "minimum": 1,
               "maximum": 128,
               "description": "",
-              "dynamic": true
+              "dynamic": true,
+              "enterpriseOnly": false
             },
             "keepalive-enabled": {
               "type": "boolean",
               "default": true,
               "description": "",
-              "dynamic": false
+              "dynamic": false,
+              "enterpriseOnly": false
             },
             "keepalive-intvl": {
               "type": "integer",
@@ -1166,7 +1333,8 @@
               "minimum": 1,
               "maximum": 2147483647,
               "description": "",
-              "dynamic": false
+              "dynamic": false,
+              "enterpriseOnly": false
             },
             "keepalive-probes": {
               "type": "integer",
@@ -1174,7 +1342,8 @@
               "minimum": 1,
               "maximum": 2147483647,
               "description": "",
-              "dynamic": false
+              "dynamic": false,
+              "enterpriseOnly": false
             },
             "keepalive-time": {
               "type": "integer",
@@ -1182,7 +1351,8 @@
               "minimum": 1,
               "maximum": 2147483647,
               "description": "",
-              "dynamic": false
+              "dynamic": false,
+              "enterpriseOnly": false
             },
             "latency-max-ms": {
               "type": "integer",
@@ -1190,7 +1360,8 @@
               "minimum": 0,
               "maximum": 1000,
               "description": "",
-              "dynamic": false
+              "dynamic": false,
+              "enterpriseOnly": false
             },
             "port": {
               "type": "integer",
@@ -1198,7 +1369,8 @@
               "minimum": 1024,
               "maximum": 65535,
               "description": "",
-              "dynamic": false
+              "dynamic": false,
+              "enterpriseOnly": false
             },
             "recv-rearm-threshold": {
               "type": "integer",
@@ -1206,7 +1378,8 @@
               "minimum": 0,
               "maximum": 1048576,
               "description": "",
-              "dynamic": true
+              "dynamic": true,
+              "enterpriseOnly": false
             },
             "send-threads": {
               "type": "integer",
@@ -1214,7 +1387,8 @@
               "minimum": 1,
               "maximum": 128,
               "description": "",
-              "dynamic": false
+              "dynamic": false,
+              "enterpriseOnly": false
             },
             "tls-addresses": {
               "type": "array",
@@ -1223,13 +1397,15 @@
               },
               "description": "",
               "dynamic": false,
+              "enterpriseOnly": true,
               "default": []
             },
             "tls-name": {
               "type": "string",
               "default": "",
               "description": "",
-              "dynamic": false
+              "dynamic": false,
+              "enterpriseOnly": true
             },
             "tls-port": {
               "type": "integer",
@@ -1237,13 +1413,15 @@
               "minimum": 1024,
               "maximum": 65535,
               "description": "",
-              "dynamic": false
+              "dynamic": false,
+              "enterpriseOnly": true
             }
           }
         },
         "info": {
           "type": "object",
           "additionalProperties": false,
+          "enterpriseOnly": false,
           "properties": {
             "addresses": {
               "type": "array",
@@ -1252,6 +1430,7 @@
               },
               "description": "",
               "dynamic": false,
+              "enterpriseOnly": false,
               "default": []
             },
             "port": {
@@ -1260,12 +1439,14 @@
               "minimum": 1024,
               "maximum": 65535,
               "description": "",
-              "dynamic": false
+              "dynamic": false,
+              "enterpriseOnly": false
             }
           }
         },
         "tls": {
           "type": "array",
+          "enterpriseOnly": true,
           "items": {
             "type": "object",
             "additionalProperties": false,
@@ -1274,55 +1455,64 @@
                 "type": "string",
                 "default": " ",
                 "description": "",
-                "dynamic": false
+                "dynamic": false,
+                "enterpriseOnly": true
               },
               "ca-file": {
                 "type": "string",
                 "default": "",
                 "description": "",
-                "dynamic": false
+                "dynamic": false,
+                "enterpriseOnly": true
               },
               "ca-path": {
                 "type": "string",
                 "default": "",
                 "description": "",
-                "dynamic": false
+                "dynamic": false,
+                "enterpriseOnly": true
               },
               "cert-blacklist": {
                 "type": "string",
                 "default": "",
                 "description": "",
-                "dynamic": false
+                "dynamic": false,
+                "enterpriseOnly": true
               },
               "cert-file": {
                 "type": "string",
                 "default": "",
                 "description": "",
-                "dynamic": false
+                "dynamic": false,
+                "enterpriseOnly": true
               },
               "cipher-suite": {
                 "type": "string",
                 "default": "",
                 "description": "",
-                "dynamic": false
+                "dynamic": false,
+                "enterpriseOnly": true
               },
               "key-file": {
                 "type": "string",
                 "default": "",
                 "description": "",
-                "dynamic": false
+                "dynamic": false,
+                "enterpriseOnly": true
               },
               "key-file-password": {
                 "type": "string",
                 "default": "",
                 "description": "",
-                "dynamic": false
+                "dynamic": false,
+                "enterpriseOnly": true
               },
               "protocols": {
                 "type": "string",
                 "default": "TLSv1.2",
                 "description": "",
-                "dynamic": false
+                "dynamic": false,
+                "enterpriseOnly": true
               }
             }
           }
@@ -1332,6 +1522,7 @@
     "namespaces": {
       "type": "array",
       "minItems": 1,
+      "enterpriseOnly": false,
       "items": {
         "type": "object",
         "additionalProperties": false,
@@ -1340,13 +1531,15 @@
             "type": "string",
             "default": " ",
             "description": "",
-            "dynamic": false
+            "dynamic": false,
+            "enterpriseOnly": false
           },
           "allow-ttl-without-nsup": {
             "type": "boolean",
             "default": false,
             "description": "",
-            "dynamic": true
+            "dynamic": true,
+            "enterpriseOnly": false
           },
           "background-query-max-rps": {
             "type": "integer",
@@ -1354,12 +1547,14 @@
             "minimum": 1,
             "maximum": 1000000,
             "description": "",
-            "dynamic": true
+            "dynamic": true,
+            "enterpriseOnly": false
           },
           "conflict-resolution-policy": {
             "type": "string",
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "generation",
             "enum": ["generation", "last-update-time"]
           },
@@ -1367,7 +1562,8 @@
             "type": "boolean",
             "default": false,
             "description": "",
-            "dynamic": true
+            "dynamic": true,
+            "enterpriseOnly": true
           },
           "default-ttl": {
             "type": "integer",
@@ -1375,73 +1571,85 @@
             "minimum": 0,
             "maximum": 315360000,
             "description": "",
-            "dynamic": true
+            "dynamic": true,
+            "enterpriseOnly": false
           },
           "disable-cold-start-eviction": {
             "type": "boolean",
             "default": false,
             "description": "",
-            "dynamic": false
+            "dynamic": false,
+            "enterpriseOnly": false
           },
           "disable-write-dup-res": {
             "type": "boolean",
             "default": false,
             "description": "",
-            "dynamic": true
+            "dynamic": true,
+            "enterpriseOnly": false
           },
           "disallow-expunge": {
             "type": "boolean",
             "default": false,
             "description": "",
-            "dynamic": true
+            "dynamic": true,
+            "enterpriseOnly": true
           },
           "disallow-null-setname": {
             "type": "boolean",
             "default": false,
             "description": "",
-            "dynamic": true
+            "dynamic": true,
+            "enterpriseOnly": false
           },
           "enable-benchmarks-batch-sub": {
             "type": "boolean",
             "default": false,
             "description": "",
-            "dynamic": true
+            "dynamic": true,
+            "enterpriseOnly": false
           },
           "enable-benchmarks-ops-sub": {
             "type": "boolean",
             "default": false,
             "description": "",
-            "dynamic": true
+            "dynamic": true,
+            "enterpriseOnly": false
           },
           "enable-benchmarks-read": {
             "type": "boolean",
             "default": false,
             "description": "",
-            "dynamic": true
+            "dynamic": true,
+            "enterpriseOnly": false
           },
           "enable-benchmarks-udf": {
             "type": "boolean",
             "default": false,
             "description": "",
-            "dynamic": true
+            "dynamic": true,
+            "enterpriseOnly": false
           },
           "enable-benchmarks-udf-sub": {
             "type": "boolean",
             "default": false,
             "description": "",
-            "dynamic": true
+            "dynamic": true,
+            "enterpriseOnly": false
           },
           "enable-benchmarks-write": {
             "type": "boolean",
             "default": false,
             "description": "",
-            "dynamic": true
+            "dynamic": true,
+            "enterpriseOnly": false
           },
           "enable-hist-proxy": {
             "type": "boolean",
             "default": false,
             "description": "",
-            "dynamic": true
+            "dynamic": true,
+            "enterpriseOnly": false
           },
           "evict-hist-buckets": {
             "type": "integer",
@@ -1449,7 +1657,8 @@
             "minimum": 100,
             "maximum": 10000000,
             "description": "",
-            "dynamic": true
+            "dynamic": true,
+            "enterpriseOnly": false
           },
           "evict-sys-memory-pct": {
             "type": "integer",
@@ -1457,7 +1666,8 @@
             "minimum": 0,
             "maximum": 100,
             "description": "",
-            "dynamic": true
+            "dynamic": true,
+            "enterpriseOnly": false
           },
           "evict-tenths-pct": {
             "type": "integer",
@@ -1465,13 +1675,15 @@
             "minimum": 0,
             "maximum": 4294967295,
             "description": "",
-            "dynamic": true
+            "dynamic": true,
+            "enterpriseOnly": false
           },
           "ignore-migrate-fill-delay": {
             "type": "boolean",
             "default": false,
             "description": "",
-            "dynamic": true
+            "dynamic": true,
+            "enterpriseOnly": true
           },
           "index-stage-size": {
             "type": "integer",
@@ -1479,13 +1691,15 @@
             "minimum": 134217728,
             "maximum": 17179869184,
             "description": "",
-            "dynamic": false
+            "dynamic": false,
+            "enterpriseOnly": false
           },
           "inline-short-queries": {
             "type": "boolean",
             "default": false,
             "description": "",
-            "dynamic": true
+            "dynamic": true,
+            "enterpriseOnly": false
           },
           "max-record-size": {
             "type": "integer",
@@ -1493,7 +1707,8 @@
             "minimum": 0,
             "maximum": 4294967295,
             "description": "",
-            "dynamic": true
+            "dynamic": true,
+            "enterpriseOnly": false
           },
           "migrate-order": {
             "type": "integer",
@@ -1501,7 +1716,8 @@
             "minimum": 1,
             "maximum": 10,
             "description": "",
-            "dynamic": true
+            "dynamic": true,
+            "enterpriseOnly": false
           },
           "migrate-retransmit-ms": {
             "type": "integer",
@@ -1509,7 +1725,8 @@
             "minimum": 0,
             "maximum": 4294967295,
             "description": "",
-            "dynamic": true
+            "dynamic": true,
+            "enterpriseOnly": false
           },
           "migrate-sleep": {
             "type": "integer",
@@ -1517,7 +1734,8 @@
             "minimum": 0,
             "maximum": 4294967295,
             "description": "",
-            "dynamic": true
+            "dynamic": true,
+            "enterpriseOnly": false
           },
           "nsup-hist-period": {
             "type": "integer",
@@ -1525,7 +1743,8 @@
             "minimum": 0,
             "maximum": 4294967295,
             "description": "",
-            "dynamic": true
+            "dynamic": true,
+            "enterpriseOnly": false
           },
           "nsup-period": {
             "type": "integer",
@@ -1533,7 +1752,8 @@
             "minimum": 0,
             "maximum": 4294967295,
             "description": "",
-            "dynamic": true
+            "dynamic": true,
+            "enterpriseOnly": false
           },
           "nsup-threads": {
             "type": "integer",
@@ -1541,7 +1761,8 @@
             "minimum": 1,
             "maximum": 128,
             "description": "",
-            "dynamic": true
+            "dynamic": true,
+            "enterpriseOnly": false
           },
           "partition-tree-sprigs": {
             "type": "integer",
@@ -1549,13 +1770,15 @@
             "minimum": 256,
             "maximum": 268453456,
             "description": "",
-            "dynamic": false
+            "dynamic": false,
+            "enterpriseOnly": false
           },
           "prefer-uniform-balance": {
             "type": "boolean",
             "default": true,
             "description": "",
-            "dynamic": true
+            "dynamic": true,
+            "enterpriseOnly": true
           },
           "rack-id": {
             "type": "integer",
@@ -1563,12 +1786,14 @@
             "minimum": 0,
             "maximum": 1000000,
             "description": "",
-            "dynamic": true
+            "dynamic": true,
+            "enterpriseOnly": true
           },
           "read-consistency-level-override": {
             "type": "string",
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "off",
             "enum": ["all", "off", "one"]
           },
@@ -1576,13 +1801,15 @@
             "type": "boolean",
             "default": false,
             "description": "",
-            "dynamic": true
+            "dynamic": true,
+            "enterpriseOnly": false
           },
           "reject-xdr-writes": {
             "type": "boolean",
             "default": false,
             "description": "",
-            "dynamic": true
+            "dynamic": true,
+            "enterpriseOnly": false
           },
           "replication-factor": {
             "type": "integer",
@@ -1590,7 +1817,8 @@
             "minimum": 1,
             "maximum": 256,
             "description": "",
-            "dynamic": false
+            "dynamic": false,
+            "enterpriseOnly": false
           },
           "sindex-stage-size": {
             "type": "integer",
@@ -1598,7 +1826,8 @@
             "minimum": 134217728,
             "maximum": 4294967296,
             "description": "",
-            "dynamic": false
+            "dynamic": false,
+            "enterpriseOnly": false
           },
           "single-query-threads": {
             "type": "integer",
@@ -1606,7 +1835,8 @@
             "minimum": 1,
             "maximum": 128,
             "description": "",
-            "dynamic": true
+            "dynamic": true,
+            "enterpriseOnly": false
           },
           "stop-writes-sys-memory-pct": {
             "type": "integer",
@@ -1614,19 +1844,22 @@
             "minimum": 0,
             "maximum": 100,
             "description": "",
-            "dynamic": true
+            "dynamic": true,
+            "enterpriseOnly": false
           },
           "strong-consistency": {
             "type": "boolean",
             "default": false,
             "description": "",
-            "dynamic": false
+            "dynamic": false,
+            "enterpriseOnly": true
           },
           "strong-consistency-allow-expunge": {
             "type": "boolean",
             "default": false,
             "description": "",
-            "dynamic": true
+            "dynamic": true,
+            "enterpriseOnly": true
           },
           "tomb-raider-eligible-age": {
             "type": "integer",
@@ -1634,7 +1867,8 @@
             "minimum": 0,
             "maximum": 4294967295,
             "description": "",
-            "dynamic": true
+            "dynamic": true,
+            "enterpriseOnly": true
           },
           "tomb-raider-period": {
             "type": "integer",
@@ -1642,7 +1876,8 @@
             "minimum": 0,
             "maximum": 4294967295,
             "description": "",
-            "dynamic": true
+            "dynamic": true,
+            "enterpriseOnly": true
           },
           "transaction-pending-limit": {
             "type": "integer",
@@ -1650,7 +1885,8 @@
             "minimum": 0,
             "maximum": 4294967295,
             "description": "",
-            "dynamic": true
+            "dynamic": true,
+            "enterpriseOnly": false
           },
           "truncate-threads": {
             "type": "integer",
@@ -1658,12 +1894,14 @@
             "minimum": 1,
             "maximum": 128,
             "description": "",
-            "dynamic": true
+            "dynamic": true,
+            "enterpriseOnly": false
           },
           "write-commit-level-override": {
             "type": "string",
             "description": "",
             "dynamic": true,
+            "enterpriseOnly": false,
             "default": "off",
             "enum": ["all", "master", "off"]
           },
@@ -1673,7 +1911,8 @@
             "minimum": 0,
             "maximum": 315360000,
             "description": "",
-            "dynamic": true
+            "dynamic": true,
+            "enterpriseOnly": true
           },
           "xdr-tomb-raider-period": {
             "type": "integer",
@@ -1681,7 +1920,8 @@
             "minimum": 0,
             "maximum": 4294967295,
             "description": "",
-            "dynamic": true
+            "dynamic": true,
+            "enterpriseOnly": true
           },
           "xdr-tomb-raider-threads": {
             "type": "integer",
@@ -1689,17 +1929,20 @@
             "minimum": 1,
             "maximum": 128,
             "description": "",
-            "dynamic": true
+            "dynamic": true,
+            "enterpriseOnly": true
           },
           "geo2dsphere-within": {
             "type": "object",
             "additionalProperties": false,
+            "enterpriseOnly": false,
             "properties": {
               "strict": {
                 "type": "boolean",
                 "default": true,
                 "description": "",
-                "dynamic": false
+                "dynamic": false,
+                "enterpriseOnly": false
               },
               "min-level": {
                 "type": "integer",
@@ -1707,7 +1950,8 @@
                 "minimum": 0,
                 "maximum": 30,
                 "description": "",
-                "dynamic": true
+                "dynamic": true,
+                "enterpriseOnly": false
               },
               "max-level": {
                 "type": "integer",
@@ -1715,7 +1959,8 @@
                 "minimum": 0,
                 "maximum": 30,
                 "description": "",
-                "dynamic": true
+                "dynamic": true,
+                "enterpriseOnly": false
               },
               "max-cells": {
                 "type": "integer",
@@ -1723,7 +1968,8 @@
                 "minimum": 1,
                 "maximum": 256,
                 "description": "",
-                "dynamic": true
+                "dynamic": true,
+                "enterpriseOnly": false
               },
               "level-mod": {
                 "type": "integer",
@@ -1731,7 +1977,8 @@
                 "minimum": 1,
                 "maximum": 3,
                 "description": "",
-                "dynamic": false
+                "dynamic": false,
+                "enterpriseOnly": false
               },
               "earth-radius-meters": {
                 "type": "integer",
@@ -1739,20 +1986,24 @@
                 "minimum": 0,
                 "maximum": 4294967295,
                 "description": "",
-                "dynamic": false
+                "dynamic": false,
+                "enterpriseOnly": false
               }
             }
           },
           "index-type": {
+            "enterpriseOnly": true,
             "oneOf": [{
               "type": "object",
               "additionalProperties": false,
+              "enterpriseOnly": true,
               "required": ["type"],
               "properties": {
                 "type": {
                   "type": "string",
                   "description": "",
                   "dynamic": false,
+                  "enterpriseOnly": true,
                   "default": "shmem",
                   "enum": ["shmem"]
                 }
@@ -1760,12 +2011,14 @@
             }, {
               "type": "object",
               "additionalProperties": false,
+              "enterpriseOnly": true,
               "required": ["type", "mounts", "mounts-budget"],
               "properties": {
                 "type": {
                   "type": "string",
                   "description": "",
                   "dynamic": false,
+                  "enterpriseOnly": true,
                   "default": "pmem",
                   "enum": ["pmem"]
                 },
@@ -1775,7 +2028,8 @@
                   "minimum": 0,
                   "maximum": 100,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": true
                 },
                 "mounts": {
                   "type": "array",
@@ -1784,6 +2038,7 @@
                   },
                   "description": "",
                   "dynamic": false,
+                  "enterpriseOnly": true,
                   "default": []
                 },
                 "mounts-budget": {
@@ -1792,18 +2047,21 @@
                   "minimum": 1073741824,
                   "maximum": 18446744073709551615,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": true
                 }
               }
             }, {
               "type": "object",
               "additionalProperties": false,
+              "enterpriseOnly": true,
               "required": ["type", "mounts", "mounts-budget"],
               "properties": {
                 "type": {
                   "type": "string",
                   "description": "",
                   "dynamic": false,
+                  "enterpriseOnly": true,
                   "default": "flash",
                   "enum": ["flash"]
                 },
@@ -1813,7 +2071,8 @@
                   "minimum": 0,
                   "maximum": 100,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": true
                 },
                 "mounts": {
                   "type": "array",
@@ -1822,6 +2081,7 @@
                   },
                   "description": "",
                   "dynamic": false,
+                  "enterpriseOnly": true,
                   "default": []
                 },
                 "mounts-budget": {
@@ -1830,13 +2090,15 @@
                   "minimum": 4294967296,
                   "maximum": 18446744073709551615,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": true
                 }
               }
             }]
           },
           "sets": {
             "type": "array",
+            "enterpriseOnly": false,
             "items": {
               "type": "object",
               "additionalProperties": false,
@@ -1845,7 +2107,8 @@
                   "type": "string",
                   "default": " ",
                   "description": "",
-                  "dynamic": false
+                  "dynamic": false,
+                  "enterpriseOnly": false
                 },
                 "default-ttl": {
                   "type": "integer",
@@ -1853,19 +2116,22 @@
                   "minimum": 0,
                   "maximum": 315360000,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": false
                 },
                 "disable-eviction": {
                   "type": "boolean",
                   "default": false,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": false
                 },
                 "enable-index": {
                   "type": "boolean",
                   "default": false,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": false
                 },
                 "stop-writes-count": {
                   "type": "integer",
@@ -1873,7 +2139,8 @@
                   "minimum": 0,
                   "maximum": 18446744073709551615,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": false
                 },
                 "stop-writes-size": {
                   "type": "integer",
@@ -1881,21 +2148,25 @@
                   "minimum": 0,
                   "maximum": 18446744073709551615,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": false
                 }
               }
             }
           },
           "sindex-type": {
+            "enterpriseOnly": true,
             "oneOf": [{
               "type": "object",
               "additionalProperties": false,
+              "enterpriseOnly": true,
               "required": ["type"],
               "properties": {
                 "type": {
                   "type": "string",
                   "description": "",
                   "dynamic": false,
+                  "enterpriseOnly": true,
                   "default": "shmem",
                   "enum": ["shmem"]
                 }
@@ -1903,12 +2174,14 @@
             }, {
               "type": "object",
               "additionalProperties": false,
+              "enterpriseOnly": true,
               "required": ["type", "mounts", "mounts-budget"],
               "properties": {
                 "type": {
                   "type": "string",
                   "description": "",
                   "dynamic": false,
+                  "enterpriseOnly": true,
                   "default": "pmem",
                   "enum": ["pmem"]
                 },
@@ -1918,7 +2191,8 @@
                   "minimum": 0,
                   "maximum": 100,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": true
                 },
                 "mounts": {
                   "type": "array",
@@ -1927,6 +2201,7 @@
                   },
                   "description": "",
                   "dynamic": false,
+                  "enterpriseOnly": true,
                   "default": []
                 },
                 "mounts-budget": {
@@ -1935,18 +2210,21 @@
                   "minimum": 1073741824,
                   "maximum": 18446744073709551615,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": true
                 }
               }
             }, {
               "type": "object",
               "additionalProperties": false,
+              "enterpriseOnly": true,
               "required": ["type", "mounts", "mounts-budget"],
               "properties": {
                 "type": {
                   "type": "string",
                   "description": "",
                   "dynamic": false,
+                  "enterpriseOnly": true,
                   "default": "flash",
                   "enum": ["flash"]
                 },
@@ -1956,7 +2234,8 @@
                   "minimum": 0,
                   "maximum": 100,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": true
                 },
                 "mounts": {
                   "type": "array",
@@ -1965,6 +2244,7 @@
                   },
                   "description": "",
                   "dynamic": false,
+                  "enterpriseOnly": true,
                   "default": []
                 },
                 "mounts-budget": {
@@ -1973,15 +2253,18 @@
                   "minimum": 1073741824,
                   "maximum": 18446744073709551615,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": true
                 }
               }
             }]
           },
           "storage-engine": {
+            "enterpriseOnly": false,
             "oneOf": [{
               "type": "object",
               "additionalProperties": false,
+              "enterpriseOnly": false,
               "oneOf": [{
                 "required": ["type", "devices"]
               }, {
@@ -1994,6 +2277,7 @@
                   "type": "string",
                   "description": "",
                   "dynamic": false,
+                  "enterpriseOnly": false,
                   "default": "memory",
                   "enum": ["memory"]
                 },
@@ -2001,12 +2285,14 @@
                   "type": "boolean",
                   "default": false,
                   "description": "",
-                  "dynamic": false
+                  "dynamic": false,
+                  "enterpriseOnly": false
                 },
                 "compression": {
                   "type": "string",
                   "description": "",
                   "dynamic": true,
+                  "enterpriseOnly": false,
                   "default": "none",
                   "enum": ["none", "lz4", "snappy", "zstd"]
                 },
@@ -2016,7 +2302,8 @@
                   "minimum": 1,
                   "maximum": 65537,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": false
                 },
                 "compression-level": {
                   "type": "integer",
@@ -2024,7 +2311,8 @@
                   "minimum": 1,
                   "maximum": 9,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": false
                 },
                 "data-size": {
                   "type": "integer",
@@ -2032,7 +2320,8 @@
                   "minimum": 1073741824,
                   "maximum": 281474976710656,
                   "description": "",
-                  "dynamic": false
+                  "dynamic": false,
+                  "enterpriseOnly": false
                 },
                 "defrag-lwm-pct": {
                   "type": "integer",
@@ -2040,7 +2329,8 @@
                   "minimum": 1,
                   "maximum": 99,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": false
                 },
                 "defrag-queue-min": {
                   "type": "integer",
@@ -2048,7 +2338,8 @@
                   "minimum": 0,
                   "maximum": 4294967295,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": false
                 },
                 "defrag-sleep": {
                   "type": "integer",
@@ -2056,7 +2347,8 @@
                   "minimum": 0,
                   "maximum": 4294967295,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": false
                 },
                 "defrag-startup-minimum": {
                   "type": "integer",
@@ -2064,7 +2356,8 @@
                   "minimum": 0,
                   "maximum": 99,
                   "description": "",
-                  "dynamic": false
+                  "dynamic": false,
+                  "enterpriseOnly": false
                 },
                 "devices": {
                   "type": "array",
@@ -2073,30 +2366,35 @@
                   },
                   "description": "",
                   "dynamic": false,
+                  "enterpriseOnly": false,
                   "default": []
                 },
                 "direct-files": {
                   "type": "boolean",
                   "default": false,
                   "description": "",
-                  "dynamic": false
+                  "dynamic": false,
+                  "enterpriseOnly": false
                 },
                 "disable-odsync": {
                   "type": "boolean",
                   "default": false,
                   "description": "",
-                  "dynamic": false
+                  "dynamic": false,
+                  "enterpriseOnly": false
                 },
                 "enable-benchmarks-storage": {
                   "type": "boolean",
                   "default": false,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": false
                 },
                 "encryption": {
                   "type": "string",
                   "description": "",
                   "dynamic": false,
+                  "enterpriseOnly": false,
                   "default": "aes-128",
                   "enum": ["aes-128", "aes-256"]
                 },
@@ -2104,13 +2402,15 @@
                   "type": "string",
                   "default": "",
                   "description": "",
-                  "dynamic": false
+                  "dynamic": false,
+                  "enterpriseOnly": false
                 },
                 "encryption-old-key-file": {
                   "type": "string",
                   "default": "",
                   "description": "",
-                  "dynamic": false
+                  "dynamic": false,
+                  "enterpriseOnly": false
                 },
                 "evict-used-pct": {
                   "type": "integer",
@@ -2118,7 +2418,8 @@
                   "minimum": 0,
                   "maximum": 100,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": false
                 },
                 "files": {
                   "type": "array",
@@ -2127,6 +2428,7 @@
                   },
                   "description": "",
                   "dynamic": false,
+                  "enterpriseOnly": false,
                   "default": []
                 },
                 "filesize": {
@@ -2135,7 +2437,8 @@
                   "minimum": 1048576,
                   "maximum": 2199023255552,
                   "description": "",
-                  "dynamic": false
+                  "dynamic": false,
+                  "enterpriseOnly": false
                 },
                 "flush-max-ms": {
                   "type": "integer",
@@ -2143,7 +2446,8 @@
                   "minimum": 0,
                   "maximum": 1000,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": false
                 },
                 "max-write-cache": {
                   "type": "integer",
@@ -2151,7 +2455,8 @@
                   "minimum": 0,
                   "maximum": 18446744073709551615,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": false
                 },
                 "stop-writes-avail-pct": {
                   "type": "integer",
@@ -2159,7 +2464,8 @@
                   "minimum": 0,
                   "maximum": 100,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": false
                 },
                 "stop-writes-used-pct": {
                   "type": "integer",
@@ -2167,7 +2473,8 @@
                   "minimum": 0,
                   "maximum": 100,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": false
                 },
                 "tomb-raider-sleep": {
                   "type": "integer",
@@ -2175,12 +2482,14 @@
                   "minimum": 0,
                   "maximum": 4294967295,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": false
                 }
               }
             }, {
               "type": "object",
               "additionalProperties": false,
+              "enterpriseOnly": false,
               "oneOf": [{
                 "required": ["type", "devices"]
               }, {
@@ -2191,6 +2500,7 @@
                   "type": "string",
                   "description": "",
                   "dynamic": false,
+                  "enterpriseOnly": false,
                   "default": "device",
                   "enum": ["device"]
                 },
@@ -2198,24 +2508,28 @@
                   "type": "boolean",
                   "default": false,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": false
                 },
                 "cold-start-empty": {
                   "type": "boolean",
                   "default": false,
                   "description": "",
-                  "dynamic": false
+                  "dynamic": false,
+                  "enterpriseOnly": false
                 },
                 "commit-to-device": {
                   "type": "boolean",
                   "default": false,
                   "description": "",
-                  "dynamic": false
+                  "dynamic": false,
+                  "enterpriseOnly": true
                 },
                 "compression": {
                   "type": "string",
                   "description": "",
                   "dynamic": true,
+                  "enterpriseOnly": true,
                   "default": "none",
                   "enum": ["none", "lz4", "snappy", "zstd"]
                 },
@@ -2225,7 +2539,8 @@
                   "minimum": 1,
                   "maximum": 65537,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": true
                 },
                 "compression-level": {
                   "type": "integer",
@@ -2233,7 +2548,8 @@
                   "minimum": 1,
                   "maximum": 9,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": true
                 },
                 "defrag-lwm-pct": {
                   "type": "integer",
@@ -2241,7 +2557,8 @@
                   "minimum": 1,
                   "maximum": 99,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": false
                 },
                 "defrag-queue-min": {
                   "type": "integer",
@@ -2249,7 +2566,8 @@
                   "minimum": 0,
                   "maximum": 4294967295,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": false
                 },
                 "defrag-sleep": {
                   "type": "integer",
@@ -2257,7 +2575,8 @@
                   "minimum": 0,
                   "maximum": 4294967295,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": false
                 },
                 "defrag-startup-minimum": {
                   "type": "integer",
@@ -2265,7 +2584,8 @@
                   "minimum": 0,
                   "maximum": 99,
                   "description": "",
-                  "dynamic": false
+                  "dynamic": false,
+                  "enterpriseOnly": false
                 },
                 "devices": {
                   "type": "array",
@@ -2274,30 +2594,35 @@
                   },
                   "description": "",
                   "dynamic": false,
+                  "enterpriseOnly": false,
                   "default": []
                 },
                 "direct-files": {
                   "type": "boolean",
                   "default": false,
                   "description": "",
-                  "dynamic": false
+                  "dynamic": false,
+                  "enterpriseOnly": false
                 },
                 "disable-odsync": {
                   "type": "boolean",
                   "default": false,
                   "description": "",
-                  "dynamic": false
+                  "dynamic": false,
+                  "enterpriseOnly": false
                 },
                 "enable-benchmarks-storage": {
                   "type": "boolean",
                   "default": false,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": false
                 },
                 "encryption": {
                   "type": "string",
                   "description": "",
                   "dynamic": false,
+                  "enterpriseOnly": true,
                   "default": "aes-128",
                   "enum": ["aes-128", "aes-256"]
                 },
@@ -2305,13 +2630,15 @@
                   "type": "string",
                   "default": "",
                   "description": "",
-                  "dynamic": false
+                  "dynamic": false,
+                  "enterpriseOnly": true
                 },
                 "encryption-old-key-file": {
                   "type": "string",
                   "default": "",
                   "description": "",
-                  "dynamic": false
+                  "dynamic": false,
+                  "enterpriseOnly": true
                 },
                 "evict-used-pct": {
                   "type": "integer",
@@ -2319,7 +2646,8 @@
                   "minimum": 0,
                   "maximum": 100,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": false
                 },
                 "files": {
                   "type": "array",
@@ -2328,6 +2656,7 @@
                   },
                   "description": "",
                   "dynamic": false,
+                  "enterpriseOnly": false,
                   "default": []
                 },
                 "filesize": {
@@ -2336,7 +2665,8 @@
                   "minimum": 1048576,
                   "maximum": 2199023255552,
                   "description": "",
-                  "dynamic": false
+                  "dynamic": false,
+                  "enterpriseOnly": false
                 },
                 "flush-max-ms": {
                   "type": "integer",
@@ -2344,7 +2674,8 @@
                   "minimum": 0,
                   "maximum": 1000,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": false
                 },
                 "max-write-cache": {
                   "type": "integer",
@@ -2352,7 +2683,8 @@
                   "minimum": 0,
                   "maximum": 18446744073709551615,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": false
                 },
                 "post-write-queue": {
                   "type": "integer",
@@ -2360,25 +2692,29 @@
                   "minimum": 0,
                   "maximum": 8192,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": false
                 },
                 "read-page-cache": {
                   "type": "boolean",
                   "default": false,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": false
                 },
                 "serialize-tomb-raider": {
                   "type": "boolean",
                   "default": false,
                   "description": "",
-                  "dynamic": false
+                  "dynamic": false,
+                  "enterpriseOnly": true
                 },
                 "sindex-startup-device-scan": {
                   "type": "boolean",
                   "default": false,
                   "description": "",
-                  "dynamic": false
+                  "dynamic": false,
+                  "enterpriseOnly": false
                 },
                 "stop-writes-avail-pct": {
                   "type": "integer",
@@ -2386,7 +2722,8 @@
                   "minimum": 0,
                   "maximum": 100,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": false
                 },
                 "stop-writes-used-pct": {
                   "type": "integer",
@@ -2394,7 +2731,8 @@
                   "minimum": 0,
                   "maximum": 100,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": false
                 },
                 "tomb-raider-sleep": {
                   "type": "integer",
@@ -2402,7 +2740,8 @@
                   "minimum": 0,
                   "maximum": 4294967295,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": true
                 },
                 "write-block-size": {
                   "type": "integer",
@@ -2410,18 +2749,21 @@
                   "minimum": 1024,
                   "maximum": 8388608,
                   "description": "",
-                  "dynamic": false
+                  "dynamic": false,
+                  "enterpriseOnly": false
                 }
               }
             }, {
               "type": "object",
               "additionalProperties": false,
+              "enterpriseOnly": true,
               "required": ["type", "files"],
               "properties": {
                 "type": {
                   "type": "string",
                   "description": "",
                   "dynamic": false,
+                  "enterpriseOnly": true,
                   "default": "pmem",
                   "enum": ["pmem"]
                 },
@@ -2429,12 +2771,14 @@
                   "type": "boolean",
                   "default": false,
                   "description": "",
-                  "dynamic": false
+                  "dynamic": false,
+                  "enterpriseOnly": true
                 },
                 "compression": {
                   "type": "string",
                   "description": "",
                   "dynamic": true,
+                  "enterpriseOnly": true,
                   "default": "none",
                   "enum": ["none", "lz4", "snappy", "zstd"]
                 },
@@ -2444,7 +2788,8 @@
                   "minimum": 1,
                   "maximum": 65537,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": true
                 },
                 "compression-level": {
                   "type": "integer",
@@ -2452,7 +2797,8 @@
                   "minimum": 1,
                   "maximum": 9,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": true
                 },
                 "defrag-lwm-pct": {
                   "type": "integer",
@@ -2460,7 +2806,8 @@
                   "minimum": 1,
                   "maximum": 99,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": true
                 },
                 "defrag-queue-min": {
                   "type": "integer",
@@ -2468,7 +2815,8 @@
                   "minimum": 0,
                   "maximum": 4294967295,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": true
                 },
                 "defrag-sleep": {
                   "type": "integer",
@@ -2476,7 +2824,8 @@
                   "minimum": 0,
                   "maximum": 4294967295,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": true
                 },
                 "defrag-startup-minimum": {
                   "type": "integer",
@@ -2484,30 +2833,35 @@
                   "minimum": 0,
                   "maximum": 99,
                   "description": "",
-                  "dynamic": false
+                  "dynamic": false,
+                  "enterpriseOnly": true
                 },
                 "direct-files": {
                   "type": "boolean",
                   "default": false,
                   "description": "",
-                  "dynamic": false
+                  "dynamic": false,
+                  "enterpriseOnly": true
                 },
                 "disable-odsync": {
                   "type": "boolean",
                   "default": false,
                   "description": "",
-                  "dynamic": false
+                  "dynamic": false,
+                  "enterpriseOnly": true
                 },
                 "enable-benchmarks-storage": {
                   "type": "boolean",
                   "default": false,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": true
                 },
                 "encryption": {
                   "type": "string",
                   "description": "",
                   "dynamic": false,
+                  "enterpriseOnly": true,
                   "default": "aes-128",
                   "enum": ["aes-128", "aes-256"]
                 },
@@ -2515,13 +2869,15 @@
                   "type": "string",
                   "default": "",
                   "description": "",
-                  "dynamic": false
+                  "dynamic": false,
+                  "enterpriseOnly": true
                 },
                 "encryption-old-key-file": {
                   "type": "string",
                   "default": "",
                   "description": "",
-                  "dynamic": false
+                  "dynamic": false,
+                  "enterpriseOnly": true
                 },
                 "evict-used-pct": {
                   "type": "integer",
@@ -2529,7 +2885,8 @@
                   "minimum": 0,
                   "maximum": 100,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": true
                 },
                 "files": {
                   "type": "array",
@@ -2538,6 +2895,7 @@
                   },
                   "description": "",
                   "dynamic": false,
+                  "enterpriseOnly": true,
                   "default": []
                 },
                 "filesize": {
@@ -2546,7 +2904,8 @@
                   "minimum": 1048576,
                   "maximum": 2199023255552,
                   "description": "",
-                  "dynamic": false
+                  "dynamic": false,
+                  "enterpriseOnly": true
                 },
                 "flush-max-ms": {
                   "type": "integer",
@@ -2554,7 +2913,8 @@
                   "minimum": 0,
                   "maximum": 1000,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": true
                 },
                 "max-write-cache": {
                   "type": "integer",
@@ -2562,7 +2922,8 @@
                   "minimum": 0,
                   "maximum": 18446744073709551615,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": true
                 },
                 "stop-writes-avail-pct": {
                   "type": "integer",
@@ -2570,7 +2931,8 @@
                   "minimum": 0,
                   "maximum": 100,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": true
                 },
                 "stop-writes-used-pct": {
                   "type": "integer",
@@ -2578,7 +2940,8 @@
                   "minimum": 0,
                   "maximum": 100,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": true
                 },
                 "tomb-raider-sleep": {
                   "type": "integer",
@@ -2586,7 +2949,8 @@
                   "minimum": 0,
                   "maximum": 4294967295,
                   "description": "",
-                  "dynamic": true
+                  "dynamic": true,
+                  "enterpriseOnly": true
                 }
               }
             }]
@@ -2597,30 +2961,35 @@
     "mod-lua": {
       "type": "object",
       "additionalProperties": false,
+      "enterpriseOnly": false,
       "properties": {
         "cache-enabled": {
           "type": "boolean",
           "default": true,
           "description": "",
-          "dynamic": false
+          "dynamic": false,
+          "enterpriseOnly": false
         },
         "user-path": {
           "type": "string",
           "default": "/opt/aerospike/usr/udf/lua",
           "description": "",
-          "dynamic": false
+          "dynamic": false,
+          "enterpriseOnly": false
         }
       }
     },
     "security": {
       "type": "object",
       "additionalProperties": false,
+      "enterpriseOnly": true,
       "properties": {
         "enable-quotas": {
           "type": "boolean",
           "default": false,
           "description": "",
-          "dynamic": false
+          "dynamic": false,
+          "enterpriseOnly": true
         },
         "privilege-refresh-period": {
           "type": "integer",
@@ -2628,7 +2997,8 @@
           "minimum": 10,
           "maximum": 86400,
           "description": "",
-          "dynamic": true
+          "dynamic": true,
+          "enterpriseOnly": true
         },
         "session-ttl": {
           "type": "integer",
@@ -2636,7 +3006,8 @@
           "minimum": 120,
           "maximum": 864000,
           "description": "",
-          "dynamic": true
+          "dynamic": true,
+          "enterpriseOnly": true
         },
         "tps-weight": {
           "type": "integer",
@@ -2644,17 +3015,20 @@
           "minimum": 2,
           "maximum": 20,
           "description": "",
-          "dynamic": true
+          "dynamic": true,
+          "enterpriseOnly": true
         },
         "ldap": {
           "type": "object",
           "additionalProperties": false,
+          "enterpriseOnly": true,
           "properties": {
             "disable-tls": {
               "type": "boolean",
               "default": false,
               "description": "",
-              "dynamic": false
+              "dynamic": false,
+              "enterpriseOnly": true
             },
             "login-threads": {
               "type": "integer",
@@ -2662,7 +3036,8 @@
               "minimum": 1,
               "maximum": 64,
               "description": "",
-              "dynamic": false
+              "dynamic": false,
+              "enterpriseOnly": true
             },
             "polling-period": {
               "type": "integer",
@@ -2670,31 +3045,36 @@
               "minimum": 0,
               "maximum": 86400,
               "description": "",
-              "dynamic": true
+              "dynamic": true,
+              "enterpriseOnly": true
             },
             "query-base-dn": {
               "type": "string",
               "default": "",
               "description": "",
-              "dynamic": false
+              "dynamic": false,
+              "enterpriseOnly": true
             },
             "query-user-dn": {
               "type": "string",
               "default": "",
               "description": "",
-              "dynamic": false
+              "dynamic": false,
+              "enterpriseOnly": true
             },
             "query-user-password-file": {
               "type": "string",
               "default": "",
               "description": "",
-              "dynamic": false
+              "dynamic": false,
+              "enterpriseOnly": true
             },
             "role-query-base-dn": {
               "type": "string",
               "default": "",
               "description": "",
-              "dynamic": false
+              "dynamic": false,
+              "enterpriseOnly": true
             },
             "role-query-patterns": {
               "type": "array",
@@ -2703,55 +3083,64 @@
               },
               "description": "",
               "dynamic": false,
+              "enterpriseOnly": true,
               "default": []
             },
             "role-query-search-ou": {
               "type": "boolean",
               "default": false,
               "description": "",
-              "dynamic": false
+              "dynamic": false,
+              "enterpriseOnly": true
             },
             "server": {
               "type": "string",
               "default": "",
               "description": "",
-              "dynamic": false
+              "dynamic": false,
+              "enterpriseOnly": true
             },
             "tls-ca-file": {
               "type": "string",
               "default": "",
               "description": "",
-              "dynamic": false
+              "dynamic": false,
+              "enterpriseOnly": true
             },
             "token-hash-method": {
               "type": "string",
               "default": "sha-256",
               "description": "",
-              "dynamic": false
+              "dynamic": false,
+              "enterpriseOnly": true
             },
             "user-dn-pattern": {
               "type": "string",
               "default": "",
               "description": "",
-              "dynamic": false
+              "dynamic": false,
+              "enterpriseOnly": true
             },
             "user-query-pattern": {
               "type": "string",
               "default": "",
               "description": "",
-              "dynamic": false
+              "dynamic": false,
+              "enterpriseOnly": true
             }
           }
         },
         "log": {
           "type": "object",
           "additionalProperties": false,
+          "enterpriseOnly": true,
           "properties": {
             "report-authentication": {
               "type": "boolean",
               "default": false,
               "description": "",
-              "dynamic": true
+              "dynamic": true,
+              "enterpriseOnly": true
             },
             "report-data-op": {
               "type": "array",
@@ -2760,6 +3149,7 @@
               },
               "description": "",
               "dynamic": true,
+              "enterpriseOnly": true,
               "default": []
             },
             "report-data-op-role": {
@@ -2769,6 +3159,7 @@
               },
               "description": "",
               "dynamic": true,
+              "enterpriseOnly": true,
               "default": []
             },
             "report-data-op-user": {
@@ -2778,25 +3169,29 @@
               },
               "description": "",
               "dynamic": true,
+              "enterpriseOnly": true,
               "default": []
             },
             "report-sys-admin": {
               "type": "boolean",
               "default": false,
               "description": "",
-              "dynamic": true
+              "dynamic": true,
+              "enterpriseOnly": true
             },
             "report-user-admin": {
               "type": "boolean",
               "default": false,
               "description": "",
-              "dynamic": true
+              "dynamic": true,
+              "enterpriseOnly": true
             },
             "report-violation": {
               "type": "boolean",
               "default": false,
               "description": "",
-              "dynamic": true
+              "dynamic": true,
+              "enterpriseOnly": true
             }
           }
         }
@@ -2805,6 +3200,7 @@
     "xdr": {
       "type": "object",
       "additionalProperties": false,
+      "enterpriseOnly": true,
       "properties": {
         "src-id": {
           "type": "integer",
@@ -2812,10 +3208,12 @@
           "minimum": 0,
           "maximum": 255,
           "description": "",
-          "dynamic": true
+          "dynamic": true,
+          "enterpriseOnly": true
         },
         "dcs": {
           "type": "array",
+          "enterpriseOnly": true,
           "items": {
             "type": "object",
             "additionalProperties": false,
@@ -2824,12 +3222,14 @@
                 "type": "string",
                 "default": " ",
                 "description": "",
-                "dynamic": false
+                "dynamic": false,
+                "enterpriseOnly": true
               },
               "auth-mode": {
                 "type": "string",
                 "description": "",
                 "dynamic": true,
+                "enterpriseOnly": true,
                 "default": "none",
                 "enum": ["none", "internal", "external", "external-insecure", "pki"]
               },
@@ -2837,19 +3237,22 @@
                 "type": "string",
                 "default": "",
                 "description": "",
-                "dynamic": true
+                "dynamic": true,
+                "enterpriseOnly": true
               },
               "auth-user": {
                 "type": "string",
                 "default": "",
                 "description": "",
-                "dynamic": true
+                "dynamic": true,
+                "enterpriseOnly": true
               },
               "connector": {
                 "type": "boolean",
                 "default": false,
                 "description": "",
-                "dynamic": true
+                "dynamic": true,
+                "enterpriseOnly": true
               },
               "max-recoveries-interleaved": {
                 "type": "integer",
@@ -2857,7 +3260,8 @@
                 "minimum": 0,
                 "maximum": 4294967295,
                 "description": "",
-                "dynamic": true
+                "dynamic": true,
+                "enterpriseOnly": true
               },
               "node-address-ports": {
                 "type": "array",
@@ -2866,6 +3270,7 @@
                 },
                 "description": "",
                 "dynamic": false,
+                "enterpriseOnly": true,
                 "default": []
               },
               "period-ms": {
@@ -2874,22 +3279,26 @@
                 "minimum": 5,
                 "maximum": 1000,
                 "description": "",
-                "dynamic": true
+                "dynamic": true,
+                "enterpriseOnly": true
               },
               "tls-name": {
                 "type": "string",
                 "default": "",
                 "description": "",
-                "dynamic": true
+                "dynamic": true,
+                "enterpriseOnly": true
               },
               "use-alternate-access-address": {
                 "type": "boolean",
                 "default": false,
                 "description": "",
-                "dynamic": true
+                "dynamic": true,
+                "enterpriseOnly": true
               },
               "namespaces": {
                 "type": "array",
+                "enterpriseOnly": true,
                 "items": {
                   "type": "object",
                   "additionalProperties": false,
@@ -2898,12 +3307,14 @@
                       "type": "string",
                       "default": " ",
                       "description": "",
-                      "dynamic": false
+                      "dynamic": false,
+                      "enterpriseOnly": true
                     },
                     "bin-policy": {
                       "type": "string",
                       "description": "",
                       "dynamic": true,
+                      "enterpriseOnly": true,
                       "default": "all",
                       "enum": ["all", "no-bins", "only-changed", "changed-and-specified", "changed-or-specified"]
                     },
@@ -2913,7 +3324,8 @@
                       "minimum": 1,
                       "maximum": 9,
                       "description": "",
-                      "dynamic": true
+                      "dynamic": true,
+                      "enterpriseOnly": true
                     },
                     "compression-threshold": {
                       "type": "integer",
@@ -2921,7 +3333,8 @@
                       "minimum": 128,
                       "maximum": 4294967295,
                       "description": "",
-                      "dynamic": true
+                      "dynamic": true,
+                      "enterpriseOnly": true
                     },
                     "delay-ms": {
                       "type": "integer",
@@ -2929,19 +3342,22 @@
                       "minimum": 0,
                       "maximum": 5000,
                       "description": "",
-                      "dynamic": true
+                      "dynamic": true,
+                      "enterpriseOnly": true
                     },
                     "enable-compression": {
                       "type": "boolean",
                       "default": false,
                       "description": "",
-                      "dynamic": true
+                      "dynamic": true,
+                      "enterpriseOnly": true
                     },
                     "forward": {
                       "type": "boolean",
                       "default": false,
                       "description": "",
-                      "dynamic": true
+                      "dynamic": true,
+                      "enterpriseOnly": true
                     },
                     "hot-key-ms": {
                       "type": "integer",
@@ -2949,7 +3365,8 @@
                       "minimum": 0,
                       "maximum": 5000,
                       "description": "",
-                      "dynamic": true
+                      "dynamic": true,
+                      "enterpriseOnly": true
                     },
                     "ignore-bins": {
                       "type": "array",
@@ -2958,13 +3375,15 @@
                       },
                       "description": "",
                       "dynamic": true,
+                      "enterpriseOnly": true,
                       "default": []
                     },
                     "ignore-expunges": {
                       "type": "boolean",
                       "default": false,
                       "description": "",
-                      "dynamic": true
+                      "dynamic": true,
+                      "enterpriseOnly": true
                     },
                     "ignore-sets": {
                       "type": "array",
@@ -2973,6 +3392,7 @@
                       },
                       "description": "",
                       "dynamic": true,
+                      "enterpriseOnly": true,
                       "default": []
                     },
                     "max-throughput": {
@@ -2981,13 +3401,15 @@
                       "minimum": 0,
                       "maximum": 4294967295,
                       "description": "",
-                      "dynamic": true
+                      "dynamic": true,
+                      "enterpriseOnly": true
                     },
                     "remote-namespace": {
                       "type": "string",
                       "default": "",
                       "description": "",
-                      "dynamic": true
+                      "dynamic": true,
+                      "enterpriseOnly": true
                     },
                     "sc-replication-wait-ms": {
                       "type": "integer",
@@ -2995,7 +3417,8 @@
                       "minimum": 5,
                       "maximum": 1000,
                       "description": "",
-                      "dynamic": true
+                      "dynamic": true,
+                      "enterpriseOnly": true
                     },
                     "ship-bins": {
                       "type": "array",
@@ -3004,25 +3427,29 @@
                       },
                       "description": "",
                       "dynamic": true,
+                      "enterpriseOnly": true,
                       "default": []
                     },
                     "ship-bin-luts": {
                       "type": "boolean",
                       "default": false,
                       "description": "",
-                      "dynamic": true
+                      "dynamic": true,
+                      "enterpriseOnly": true
                     },
                     "ship-nsup-deletes": {
                       "type": "boolean",
                       "default": false,
                       "description": "",
-                      "dynamic": true
+                      "dynamic": true,
+                      "enterpriseOnly": true
                     },
                     "ship-only-specified-sets": {
                       "type": "boolean",
                       "default": false,
                       "description": "",
-                      "dynamic": true
+                      "dynamic": true,
+                      "enterpriseOnly": true
                     },
                     "ship-sets": {
                       "type": "array",
@@ -3031,6 +3458,7 @@
                       },
                       "description": "",
                       "dynamic": true,
+                      "enterpriseOnly": true,
                       "default": []
                     },
                     "transaction-queue-limit": {
@@ -3039,12 +3467,14 @@
                       "minimum": 1024,
                       "maximum": 1048576,
                       "description": "",
-                      "dynamic": true
+                      "dynamic": true,
+                      "enterpriseOnly": true
                     },
                     "write-policy": {
                       "type": "string",
                       "description": "",
                       "dynamic": true,
+                      "enterpriseOnly": true,
                       "default": "auto",
                       "enum": ["auto", "update", "replace"]
                     }
@@ -3056,5 +3486,6 @@
         }
       }
     }
-  }
+  },
+  "enterpriseOnly": false
 }

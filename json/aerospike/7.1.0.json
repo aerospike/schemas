@@ -2154,7 +2154,7 @@
                 "default-read-touch-ttl-pct": {
                   "type": "integer",
                   "default": 0,
-                  "minimum": 0,
+                  "minimum": -1,
                   "maximum": 100,
                   "description": "",
                   "dynamic": true,
@@ -3047,7 +3047,7 @@
           "type": "string",
           "default": "",
           "description": "",
-          "dynamic": true,
+          "dynamic": false,
           "enterpriseOnly": true
         },
         "enable-quotas": {

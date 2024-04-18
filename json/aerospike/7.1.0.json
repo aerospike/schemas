@@ -1701,6 +1701,15 @@
             "dynamic": true,
             "enterpriseOnly": false
           },
+          "evict-indexes-memory-pct": {
+            "type": "integer",
+            "default": 0,
+            "minimum": 0,
+            "maximum": 100,
+            "description": "",
+            "dynamic": true,
+            "enterpriseOnly": false
+          },
           "evict-sys-memory-pct": {
             "type": "integer",
             "default": 0,
@@ -1725,6 +1734,15 @@
             "description": "",
             "dynamic": true,
             "enterpriseOnly": true
+          },
+          "indexes-memory-budget": {
+            "type": "integer",
+            "default": 0,
+            "minimum": 0,
+            "maximum": 18446744073709551615,
+            "description": "",
+            "dynamic": true,
+            "enterpriseOnly": false
           },
           "index-stage-size": {
             "type": "integer",

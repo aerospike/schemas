@@ -1701,6 +1701,15 @@
             "dynamic": true,
             "enterpriseOnly": false
           },
+          "evict-indexes-memory-pct": {
+            "type": "integer",
+            "default": 0,
+            "minimum": 0,
+            "maximum": 100,
+            "description": "",
+            "dynamic": true,
+            "enterpriseOnly": false
+          },
           "evict-sys-memory-pct": {
             "type": "integer",
             "default": 0,
@@ -1733,6 +1742,15 @@
             "maximum": 17179869184,
             "description": "",
             "dynamic": false,
+            "enterpriseOnly": false
+          },
+          "indexes-memory-budget": {
+            "type": "integer",
+            "default": 0,
+            "minimum": 0,
+            "maximum": 18446744073709551615,
+            "description": "",
+            "dynamic": true,
             "enterpriseOnly": false
           },
           "inline-short-queries": {
@@ -2336,13 +2354,13 @@
                   "default": false,
                   "description": "",
                   "dynamic": false,
-                  "enterpriseOnly": false
+                  "enterpriseOnly": true
                 },
                 "compression": {
                   "type": "string",
                   "description": "",
                   "dynamic": true,
-                  "enterpriseOnly": false,
+                  "enterpriseOnly": true,
                   "default": "none",
                   "enum": ["none", "lz4", "snappy", "zstd"]
                 },
@@ -2353,7 +2371,7 @@
                   "maximum": 65537,
                   "description": "",
                   "dynamic": true,
-                  "enterpriseOnly": false
+                  "enterpriseOnly": true
                 },
                 "compression-level": {
                   "type": "integer",
@@ -2362,7 +2380,7 @@
                   "maximum": 9,
                   "description": "",
                   "dynamic": true,
-                  "enterpriseOnly": false
+                  "enterpriseOnly": true
                 },
                 "data-size": {
                   "type": "integer",
@@ -2444,7 +2462,7 @@
                   "type": "string",
                   "description": "",
                   "dynamic": false,
-                  "enterpriseOnly": false,
+                  "enterpriseOnly": true,
                   "default": "aes-128",
                   "enum": ["aes-128", "aes-256"]
                 },
@@ -2453,14 +2471,14 @@
                   "default": "",
                   "description": "",
                   "dynamic": false,
-                  "enterpriseOnly": false
+                  "enterpriseOnly": true
                 },
                 "encryption-old-key-file": {
                   "type": "string",
                   "default": "",
                   "description": "",
                   "dynamic": false,
-                  "enterpriseOnly": false
+                  "enterpriseOnly": true
                 },
                 "evict-used-pct": {
                   "type": "integer",
@@ -2542,7 +2560,7 @@
                   "maximum": 4294967295,
                   "description": "",
                   "dynamic": true,
-                  "enterpriseOnly": false
+                  "enterpriseOnly": true
                 }
               }
             }, {

@@ -225,7 +225,7 @@
         },
         "node-id": {
           "type": "string",
-          "default": "BB9C0E8CD290C00",
+          "default": "",
           "description": "",
           "dynamic": false,
           "enterpriseOnly": false
@@ -1558,6 +1558,15 @@
             "description": "",
             "dynamic": false,
             "enterpriseOnly": false
+          },
+          "active-rack": {
+            "type": "integer",
+            "default": 0,
+            "minimum": 0,
+            "maximum": 1000000,
+            "description": "",
+            "dynamic": true,
+            "enterpriseOnly": true
           },
           "allow-ttl-without-nsup": {
             "type": "boolean",
@@ -3486,6 +3495,13 @@
                       "dynamic": true,
                       "enterpriseOnly": true
                     },
+                    "restrict-version-skipping": {
+                      "type": "boolean",
+                      "default": false,
+                      "description": "",
+                      "dynamic": true,
+                      "enterpriseOnly": true
+                    },
                     "sc-replication-wait-ms": {
                       "type": "integer",
                       "default": 100,
@@ -3535,6 +3551,15 @@
                       "dynamic": true,
                       "enterpriseOnly": true,
                       "default": []
+                    },
+                    "skip-versions-within": {
+                      "type": "integer",
+                      "default": 0,
+                      "minimum": 0,
+                      "maximum": 3600,
+                      "description": "",
+                      "dynamic": true,
+                      "enterpriseOnly": true
                     },
                     "transaction-queue-limit": {
                       "type": "integer",

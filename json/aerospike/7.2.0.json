@@ -225,7 +225,7 @@
         },
         "node-id": {
           "type": "string",
-          "default": "BB9030011AC4202",
+          "default": "",
           "description": "",
           "dynamic": false,
           "enterpriseOnly": false

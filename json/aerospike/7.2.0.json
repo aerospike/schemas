@@ -3495,13 +3495,6 @@
                       "dynamic": true,
                       "enterpriseOnly": true
                     },
-                    "restrict-version-skipping": {
-                      "type": "boolean",
-                      "default": false,
-                      "description": "",
-                      "dynamic": true,
-                      "enterpriseOnly": true
-                    },
                     "sc-replication-wait-ms": {
                       "type": "integer",
                       "default": 100,
@@ -3552,14 +3545,22 @@
                       "enterpriseOnly": true,
                       "default": []
                     },
-                    "skip-versions-within": {
+                    "ship-versions-interval": {
                       "type": "integer",
                       "default": 0,
-                      "minimum": 0,
+                      "minimum": 1,
                       "maximum": 3600,
                       "description": "",
                       "dynamic": true,
                       "enterpriseOnly": true
+                    },
+                    "ship-versions-policy": {
+                      "type": "string",
+                      "description": "",
+                      "dynamic": true,
+                      "enterpriseOnly": true,
+                      "default": "latest",
+                      "enum": ["latest", "all", "interval"]
                     },
                     "transaction-queue-limit": {
                       "type": "integer",

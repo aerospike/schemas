@@ -3547,7 +3547,7 @@
                     },
                     "ship-versions-interval": {
                       "type": "integer",
-                      "default": 0,
+                      "default": 60,
                       "minimum": 1,
                       "maximum": 3600,
                       "description": "",

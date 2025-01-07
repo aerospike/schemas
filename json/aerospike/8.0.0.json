@@ -1826,7 +1826,7 @@
           },
           "mrt-duration": {
             "type": "integer",
-            "default": 0,
+            "default": 10,
             "minimum": 1,
             "maximum": 120,
             "description": "",

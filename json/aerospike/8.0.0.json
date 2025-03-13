@@ -43,6 +43,15 @@
           "dynamic": true,
           "enterpriseOnly": false
         },
+        "batch-max-requests": {
+          "type": "integer",
+          "default": 0,
+          "minimum": 0,
+          "maximum": 4294967295,
+          "description": "",
+          "dynamic": true,
+          "enterpriseOnly": false
+        },
         "batch-max-unused-buffers": {
           "type": "integer",
           "default": 256,
@@ -216,7 +225,7 @@
         },
         "node-id": {
           "type": "string",
-          "default": "BB9040011AC4202",
+          "default": "",
           "description": "",
           "dynamic": false,
           "enterpriseOnly": false
@@ -364,6 +373,15 @@
           "description": "",
           "dynamic": true,
           "enterpriseOnly": false
+        },
+        "tls-refresh-period": {
+          "type": "integer",
+          "default": 60,
+          "minimum": 0,
+          "maximum": 4294967295,
+          "description": "",
+          "dynamic": true,
+          "enterpriseOnly": true
         },
         "transaction-max-ms": {
           "type": "integer",
@@ -686,6 +704,13 @@
             "enterpriseOnly": false,
             "default": "CRITICAL"
           },
+          "info-command": {
+            "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
+            "description": "",
+            "dynamic": true,
+            "enterpriseOnly": false,
+            "default": "CRITICAL"
+          },
           "info-port": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
@@ -701,6 +726,20 @@
             "default": "CRITICAL"
           },
           "migrate": {
+            "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
+            "description": "",
+            "dynamic": true,
+            "enterpriseOnly": false,
+            "default": "CRITICAL"
+          },
+          "mrt-audit": {
+            "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
+            "description": "",
+            "dynamic": true,
+            "enterpriseOnly": false,
+            "default": "CRITICAL"
+          },
+          "mrt-monitor": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",
             "dynamic": true,
@@ -1534,12 +1573,28 @@
             "dynamic": false,
             "enterpriseOnly": false
           },
+          "active-rack": {
+            "type": "integer",
+            "default": 0,
+            "minimum": 0,
+            "maximum": 1000000,
+            "description": "",
+            "dynamic": true,
+            "enterpriseOnly": true
+          },
           "allow-ttl-without-nsup": {
             "type": "boolean",
             "default": false,
             "description": "",
             "dynamic": true,
             "enterpriseOnly": false
+          },
+          "auto-revive": {
+            "type": "boolean",
+            "default": false,
+            "description": "",
+            "dynamic": false,
+            "enterpriseOnly": true
           },
           "background-query-max-rps": {
             "type": "integer",
@@ -1565,6 +1620,15 @@
             "dynamic": true,
             "enterpriseOnly": true
           },
+          "default-read-touch-ttl-pct": {
+            "type": "integer",
+            "default": 0,
+            "minimum": 0,
+            "maximum": 100,
+            "description": "",
+            "dynamic": true,
+            "enterpriseOnly": false
+          },
           "default-ttl": {
             "type": "integer",
             "default": 0,
@@ -1580,6 +1644,13 @@
             "description": "",
             "dynamic": false,
             "enterpriseOnly": false
+          },
+          "disable-mrt-writes": {
+            "type": "boolean",
+            "default": false,
+            "description": "",
+            "dynamic": true,
+            "enterpriseOnly": true
           },
           "disable-write-dup-res": {
             "type": "boolean",
@@ -1660,7 +1731,7 @@
             "dynamic": true,
             "enterpriseOnly": false
           },
-          "evict-sys-memory-pct": {
+          "evict-indexes-memory-pct": {
             "type": "integer",
             "default": 0,
             "minimum": 0,
@@ -1694,6 +1765,15 @@
             "dynamic": false,
             "enterpriseOnly": false
           },
+          "indexes-memory-budget": {
+            "type": "integer",
+            "default": 0,
+            "minimum": 0,
+            "maximum": 18446744073709551615,
+            "description": "",
+            "dynamic": true,
+            "enterpriseOnly": false
+          },
           "inline-short-queries": {
             "type": "boolean",
             "default": false,
@@ -1703,9 +1783,9 @@
           },
           "max-record-size": {
             "type": "integer",
-            "default": 0,
+            "default": 1048576,
             "minimum": 0,
-            "maximum": 4294967295,
+            "maximum": 8388608,
             "description": "",
             "dynamic": true,
             "enterpriseOnly": false
@@ -1728,6 +1808,13 @@
             "dynamic": true,
             "enterpriseOnly": false
           },
+          "migrate-skip-unreadable": {
+            "type": "boolean",
+            "default": false,
+            "description": "",
+            "dynamic": true,
+            "enterpriseOnly": false
+          },
           "migrate-sleep": {
             "type": "integer",
             "default": 1,
@@ -1736,6 +1823,15 @@
             "description": "",
             "dynamic": true,
             "enterpriseOnly": false
+          },
+          "mrt-duration": {
+            "type": "integer",
+            "default": 10,
+            "minimum": 1,
+            "maximum": 120,
+            "description": "",
+            "dynamic": true,
+            "enterpriseOnly": true
           },
           "nsup-hist-period": {
             "type": "integer",
@@ -1768,7 +1864,7 @@
             "type": "integer",
             "default": 256,
             "minimum": 256,
-            "maximum": 268453456,
+            "maximum": 268435456,
             "description": "",
             "dynamic": false,
             "enterpriseOnly": false
@@ -2110,6 +2206,15 @@
                   "dynamic": false,
                   "enterpriseOnly": false
                 },
+                "default-read-touch-ttl-pct": {
+                  "type": "integer",
+                  "default": 0,
+                  "minimum": -1,
+                  "maximum": 100,
+                  "description": "",
+                  "dynamic": true,
+                  "enterpriseOnly": false
+                },
                 "default-ttl": {
                   "type": "integer",
                   "default": 0,
@@ -2286,13 +2391,13 @@
                   "default": false,
                   "description": "",
                   "dynamic": false,
-                  "enterpriseOnly": false
+                  "enterpriseOnly": true
                 },
                 "compression": {
                   "type": "string",
                   "description": "",
                   "dynamic": true,
-                  "enterpriseOnly": false,
+                  "enterpriseOnly": true,
                   "default": "none",
                   "enum": ["none", "lz4", "snappy", "zstd"]
                 },
@@ -2303,7 +2408,7 @@
                   "maximum": 65537,
                   "description": "",
                   "dynamic": true,
-                  "enterpriseOnly": false
+                  "enterpriseOnly": true
                 },
                 "compression-level": {
                   "type": "integer",
@@ -2312,12 +2417,12 @@
                   "maximum": 9,
                   "description": "",
                   "dynamic": true,
-                  "enterpriseOnly": false
+                  "enterpriseOnly": true
                 },
                 "data-size": {
                   "type": "integer",
                   "default": 0,
-                  "minimum": 1073741824,
+                  "minimum": 268435456,
                   "maximum": 281474976710656,
                   "description": "",
                   "dynamic": false,
@@ -2394,7 +2499,7 @@
                   "type": "string",
                   "description": "",
                   "dynamic": false,
-                  "enterpriseOnly": false,
+                  "enterpriseOnly": true,
                   "default": "aes-128",
                   "enum": ["aes-128", "aes-256"]
                 },
@@ -2403,14 +2508,14 @@
                   "default": "",
                   "description": "",
                   "dynamic": false,
-                  "enterpriseOnly": false
+                  "enterpriseOnly": true
                 },
                 "encryption-old-key-file": {
                   "type": "string",
                   "default": "",
                   "description": "",
                   "dynamic": false,
-                  "enterpriseOnly": false
+                  "enterpriseOnly": true
                 },
                 "evict-used-pct": {
                   "type": "integer",
@@ -2434,7 +2539,7 @@
                 "filesize": {
                   "type": "integer",
                   "default": 0,
-                  "minimum": 1048576,
+                  "minimum": 134217728,
                   "maximum": 2199023255552,
                   "description": "",
                   "dynamic": false,
@@ -2445,6 +2550,15 @@
                   "default": 1000,
                   "minimum": 0,
                   "maximum": 1000,
+                  "description": "",
+                  "dynamic": true,
+                  "enterpriseOnly": false
+                },
+                "flush-size": {
+                  "type": "integer",
+                  "default": 1048576,
+                  "minimum": 4096,
+                  "maximum": 8388608,
                   "description": "",
                   "dynamic": true,
                   "enterpriseOnly": false
@@ -2483,7 +2597,7 @@
                   "maximum": 4294967295,
                   "description": "",
                   "dynamic": true,
-                  "enterpriseOnly": false
+                  "enterpriseOnly": true
                 }
               }
             }, {
@@ -2662,7 +2776,7 @@
                 "filesize": {
                   "type": "integer",
                   "default": 0,
-                  "minimum": 1048576,
+                  "minimum": 134217728,
                   "maximum": 2199023255552,
                   "description": "",
                   "dynamic": false,
@@ -2677,6 +2791,15 @@
                   "dynamic": true,
                   "enterpriseOnly": false
                 },
+                "flush-size": {
+                  "type": "integer",
+                  "default": 1048576,
+                  "minimum": 4096,
+                  "maximum": 8388608,
+                  "description": "",
+                  "dynamic": true,
+                  "enterpriseOnly": false
+                },
                 "max-write-cache": {
                   "type": "integer",
                   "default": 67108864,
@@ -2686,11 +2809,11 @@
                   "dynamic": true,
                   "enterpriseOnly": false
                 },
-                "post-write-queue": {
+                "post-write-cache": {
                   "type": "integer",
-                  "default": 256,
+                  "default": 268435456,
                   "minimum": 0,
-                  "maximum": 8192,
+                  "maximum": 18446744073709551615,
                   "description": "",
                   "dynamic": true,
                   "enterpriseOnly": false
@@ -2742,15 +2865,6 @@
                   "description": "",
                   "dynamic": true,
                   "enterpriseOnly": true
-                },
-                "write-block-size": {
-                  "type": "integer",
-                  "default": 1048576,
-                  "minimum": 1024,
-                  "maximum": 8388608,
-                  "description": "",
-                  "dynamic": false,
-                  "enterpriseOnly": false
                 }
               }
             }, {
@@ -2901,7 +3015,7 @@
                 "filesize": {
                   "type": "integer",
                   "default": 0,
-                  "minimum": 1048576,
+                  "minimum": 134217728,
                   "maximum": 2199023255552,
                   "description": "",
                   "dynamic": false,
@@ -2984,6 +3098,13 @@
       "additionalProperties": false,
       "enterpriseOnly": true,
       "properties": {
+        "default-password-file": {
+          "type": "string",
+          "default": "",
+          "description": "",
+          "dynamic": false,
+          "enterpriseOnly": true
+        },
         "enable-quotas": {
           "type": "boolean",
           "default": false,
@@ -3460,6 +3581,23 @@
                       "dynamic": true,
                       "enterpriseOnly": true,
                       "default": []
+                    },
+                    "ship-versions-interval": {
+                      "type": "integer",
+                      "default": 60,
+                      "minimum": 1,
+                      "maximum": 3600,
+                      "description": "",
+                      "dynamic": true,
+                      "enterpriseOnly": true
+                    },
+                    "ship-versions-policy": {
+                      "type": "string",
+                      "description": "",
+                      "dynamic": true,
+                      "enterpriseOnly": true,
+                      "default": "latest",
+                      "enum": ["latest", "all", "interval"]
                     },
                     "transaction-queue-limit": {
                       "type": "integer",

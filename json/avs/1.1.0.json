@@ -1,0 +1,157 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Aerospike Vector Search Configuration Schema",
+    "type": "object",
+    "properties": {
+      "cluster": {
+        "type": "object",
+        "required": ["cluster-name"],
+        "properties": {
+          "cluster-name": { "type": "string" },
+          "node-id": { "type": "string", "pattern": "^[0-9a-fA-F]+$" },
+          "node-roles": { "type": "array", "items": { "type": "string" } }
+        }
+      },
+      "feature-key-file": { "type": "string" },
+      "aerospike": {
+        "type": "object",
+        "required": ["seeds"],
+        "properties": {
+          "seeds": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "properties": {
+                  "port": { "type": "integer" }
+                }
+              }
+            }
+          },
+          "client-policy": {
+            "type": "object",
+            "properties": {
+              "credentials": {
+                "type": "object",
+                "required": ["username", "password-file"],
+                "properties": {
+                  "username": { "type": "string" },
+                  "password-file": { "type": "string" }
+                }
+              },
+              "tls-id": { "type": "string" },
+              "max-conns-per-node": { "type": "integer" }
+            }
+          }
+        }
+      },
+      "logging": {
+        "type": "object",
+        "properties": {
+          "timezone": { "type": "string" },
+          "format": { "type": "string", "enum": ["text", "simple", "json"] },
+          "file": { "type": "string" },
+          "levels": { "type": "object" },
+          "max-history": { "type": "integer" },
+          "ticker-interval": { "type": "integer" }
+        }
+      },
+      "heartbeat": {
+        "type": "object",
+        "required": ["seeds"],
+        "properties": {
+          "seeds": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["address", "port"],
+              "properties": {
+                "address": { "type": "string" },
+                "port": { "type": "integer" }
+              }
+            }
+          }
+        }
+      },
+      "interconnect": {
+        "type": "object",
+        "properties": {
+          "client-tls-id": { "type": "string" },
+          "ports": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "properties": {
+                "addresses": { "type": "array", "items": { "type": "string" } },
+                "tls-id": { "type": "string" }
+              }
+            }
+          }
+        }
+      },
+      "security": {
+        "type": "object",
+        "properties": {
+          "auth-token": {
+            "type": "object",
+            "required": ["private-key", "public-key"],
+            "properties": {
+              "private-key": { "type": "string" },
+              "private-key-password": { "type": "string" },
+              "public-key": { "type": "string" },
+              "token-expiry": { "type": "integer" }
+            }
+          }
+        }
+      },
+      "service": {
+        "type": "object",
+        "properties": {
+          "metadata-namespace": { "type": "string" },
+          "ports": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "properties": {
+                "tls-id": { "type": "string" },
+                "advertised-listeners": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "address": { "type": "string" },
+                        "port": { "type": "integer" }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "tls": { "type": "object", "additionalProperties": { "type": "object" } },
+      "manage": { "type": "object", "properties": { "ports": { "type": "object" } } },
+      "hnsw": {
+        "type": "object",
+        "properties": {
+          "max-mem-queue-size": { "type": "integer" },
+          "cleanup": { "type": "object" },
+          "batch-merge": { "type": "object" },
+          "healer": { "type": "object" }
+        }
+      }
+    },
+    "required": [
+      "cluster",
+      "feature-key-file",
+      "aerospike",
+      "service",
+      "interconnect"
+    ],
+    "additionalProperties": false
+  }
+  

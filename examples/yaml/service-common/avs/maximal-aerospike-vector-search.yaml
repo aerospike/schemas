@@ -1,0 +1,123 @@
+cluster:
+  cluster-name: "aerospike-vector-search"
+  node-id: "a1b2c3"
+  node-roles:
+    - "index"
+    - "search"
+
+feature-key-file: "/etc/aerospike/features.conf"
+
+aerospike:
+  seeds:
+    - aerospike-node-1:
+        port: 3000
+    - aerospike-node-2:
+        port: 3001
+  client-policy:
+    credentials:
+      username: "admin"
+      password-file: "/etc/aerospike/password.txt"
+    tls-id: "aerospike-tls"
+    max-conns-per-node: 1000
+
+logging:
+  timezone: "Asia/Calcutta"
+  format: "json"
+  file: "/var/log/aerospike-vector-search.log"
+  levels:
+    metrics-ticker: "debug"
+    com.aerospike.vector.index: "debug"
+    com.aerospike.vector.storage: "info"
+  max-history: 30
+  ticker-interval: 10
+
+heartbeat:
+  seeds:
+    - address: "10.0.0.1"
+      port: 5001
+    - address: "10.0.0.2"
+      port: 5001
+
+interconnect:
+  client-tls-id: "interconnect-tls"
+  ports:
+    "5001":
+      addresses:
+        - "127.0.0.1"
+        - "10.0.0.1"
+      tls-id: "interconnect-tls"
+
+security:
+  auth-token:
+    private-key: "/etc/aerospike/private.pem"
+    private-key-password: "secretpassword"
+    public-key: "/etc/aerospike/public.pem"
+    token-expiry: 3600
+
+service:
+  metadata-namespace: "aerospike-meta"
+  ports:
+    "5000":
+      tls-id: "service-tls"
+      advertised-listeners:
+        external:
+          - address: "vector-search.example.com"
+            port: 5443
+
+tls:
+  service-tls:
+    mutual-auth: true
+    allowed-peer-names:
+      - "svc.aerospike.com"
+    trust-store:
+      store-type: PEM
+      certificate-files: "/etc/aerospike/tls/ca.pem"
+    key-store:
+      store-type: PEM
+      store-file: "/etc/aerospike/tls/service.key.pem"
+      store-password-file: "/etc/aerospike/tls/storepass"
+      certificate-chain-files: "/etc/aerospike/tls/service.crt.pem"
+
+  interconnect-tls:
+    mutual-auth: true
+    allowed-peer-names:
+      - "connector.aerospike.com"
+    trust-store:
+      store-type: PEM
+      certificate-files: "/etc/aerospike/tls/ca.pem"
+    key-store:
+      store-type: PEM
+      store-file: "/etc/aerospike/tls/interconnect.key.pem"
+      store-password-file: "/etc/aerospike/tls/storepass"
+      certificate-chain-files: "/etc/aerospike/tls/interconnect.crt.pem"
+    override-tls-hostname: "connector.aerospike.com"
+
+  aerospike-tls:
+    mutual-auth: false
+    trust-store:
+      store-type: PEM
+      certificate-files: "/etc/aerospike/tls/ca.pem"
+    key-store:
+      store-type: PEM
+      store-file: "/etc/aerospike/tls/aerospike.key.pem"
+      store-password-file: "/etc/aerospike/tls/storepass"
+      certificate-chain-files: "/etc/aerospike/tls/aerospike.crt.pem"
+    override-tls-hostname: "asd.aerospike.com"
+
+manage:
+  ports:
+    "5040":
+      tls-id: "service-tls"
+
+hnsw:
+  max-mem-queue-size: 4000
+  cleanup:
+    dropped-index-cleanup-scheduler-delay: 5000
+    mark-dropped-index-clean-after: 30000
+    deleted-index-retention-time: 50000
+  batch-merge:
+    parallelism: 200
+    executor-initial-delay: 600000
+  healer:
+    schedule: "0 */1 * * * ?"
+    reindex-percent: 0.25

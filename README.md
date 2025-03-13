@@ -1,2 +1,3 @@
 # schemas
-Location for public aerospike schemas (json / yaml / xml / etc)
+Location for private aerospike schemas (json / yaml / xml / etc)
+

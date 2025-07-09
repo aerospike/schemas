@@ -1851,7 +1851,7 @@
           "max-record-size": {
             "type": "integer",
             "default": 1048576,
-            "minimum": 0,
+            "minimum": 64,
             "maximum": 8388608,
             "description": "",
             "dynamic": true,
@@ -2489,7 +2489,7 @@
                 "data-size": {
                   "type": "integer",
                   "default": 0,
-                  "minimum": 268435456,
+                  "minimum": 536870912,
                   "maximum": 281474976710656,
                   "description": "",
                   "dynamic": false,

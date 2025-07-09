@@ -1536,12 +1536,6 @@
             }
           }
         },
-        "info": {
-          "type": "object",
-          "additionalProperties": false,
-          "enterpriseOnly": false,
-          "properties": {}
-        },
         "tls": {
           "type": "array",
           "enterpriseOnly": true,

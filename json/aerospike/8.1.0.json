@@ -1114,6 +1114,11 @@
           "type": "object",
           "additionalProperties": false,
           "enterpriseOnly": false,
+          "anyOf": [{
+            "required": ["port"]
+          }, {
+            "required": ["tls-name", "tls-port"]
+          }],
           "properties": {
             "addresses": {
               "type": "array",

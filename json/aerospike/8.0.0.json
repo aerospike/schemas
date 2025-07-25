@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-06/schema",
   "additionalProperties": false,
   "type": "object",
-  "required": ["network", "namespaces"],
+  "required": ["service", "network", "namespaces"],
   "properties": {
     "service": {
       "type": "object",
@@ -1784,7 +1784,7 @@
           "max-record-size": {
             "type": "integer",
             "default": 1048576,
-            "minimum": 0,
+            "minimum": 64,
             "maximum": 8388608,
             "description": "",
             "dynamic": true,

@@ -3477,7 +3477,7 @@
               },
               "recovery-threads": {
                 "type": "integer",
-                "default": 0,
+                "default": 1,
                 "minimum": 1,
                 "maximum": 32,
                 "description": "",

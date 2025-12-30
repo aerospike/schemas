@@ -914,6 +914,13 @@
             "enterpriseOnly": false,
             "default": "CRITICAL"
           },
+          "masking": {
+            "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
+            "description": "",
+            "dynamic": true,
+            "enterpriseOnly": false,
+            "default": "CRITICAL"
+          },
           "any": {
             "enum": ["CRITICAL", "critical", "WARNING", "warning", "INFO", "info", "DEBUG", "debug", "DETAIL", "detail"],
             "description": "",

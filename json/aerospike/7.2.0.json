@@ -153,8 +153,8 @@
         "info-threads": {
           "type": "integer",
           "default": 16,
-          "minimum": 0,
-          "maximum": 2147483647,
+          "minimum": 1,
+          "maximum": 256,
           "description": "",
           "dynamic": true,
           "enterpriseOnly": false
@@ -270,7 +270,7 @@
         "proto-fd-max": {
           "type": "integer",
           "default": 15000,
-          "minimum": 0,
+          "minimum": 1024,
           "maximum": 2147483647,
           "description": "",
           "dynamic": true,
@@ -1551,6 +1551,7 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
+        "required": ["storage-engine"],
         "properties": {
           "name": {
             "type": "string",
@@ -1783,6 +1784,13 @@
             "default": 5000,
             "minimum": 0,
             "maximum": 4294967295,
+            "description": "",
+            "dynamic": true,
+            "enterpriseOnly": false
+          },
+          "migrate-skip-unreadable": {
+            "type": "boolean",
+            "default": false,
             "description": "",
             "dynamic": true,
             "enterpriseOnly": false
@@ -2385,7 +2393,7 @@
                 "data-size": {
                   "type": "integer",
                   "default": 0,
-                  "minimum": 134217728,
+                  "minimum": 268435456,
                   "maximum": 281474976710656,
                   "description": "",
                   "dynamic": false,
@@ -2502,7 +2510,7 @@
                 "filesize": {
                   "type": "integer",
                   "default": 0,
-                  "minimum": 1048576,
+                  "minimum": 134217728,
                   "maximum": 2199023255552,
                   "description": "",
                   "dynamic": false,
@@ -2529,7 +2537,7 @@
                 "max-write-cache": {
                   "type": "integer",
                   "default": 67108864,
-                  "minimum": 0,
+                  "minimum": 67108864,
                   "maximum": 18446744073709551615,
                   "description": "",
                   "dynamic": true,
@@ -2739,7 +2747,7 @@
                 "filesize": {
                   "type": "integer",
                   "default": 0,
-                  "minimum": 1048576,
+                  "minimum": 134217728,
                   "maximum": 2199023255552,
                   "description": "",
                   "dynamic": false,
@@ -2766,7 +2774,7 @@
                 "max-write-cache": {
                   "type": "integer",
                   "default": 67108864,
-                  "minimum": 0,
+                  "minimum": 67108864,
                   "maximum": 18446744073709551615,
                   "description": "",
                   "dynamic": true,
@@ -2978,7 +2986,7 @@
                 "filesize": {
                   "type": "integer",
                   "default": 0,
-                  "minimum": 1048576,
+                  "minimum": 134217728,
                   "maximum": 2199023255552,
                   "description": "",
                   "dynamic": false,
@@ -2996,7 +3004,7 @@
                 "max-write-cache": {
                   "type": "integer",
                   "default": 67108864,
-                  "minimum": 0,
+                  "minimum": 67108864,
                   "maximum": 18446744073709551615,
                   "description": "",
                   "dynamic": true,
@@ -3041,6 +3049,13 @@
       "enterpriseOnly": false,
       "properties": {
         "cache-enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "",
+          "dynamic": false,
+          "enterpriseOnly": false
+        },
+        "allow-unsafe-lua": {
           "type": "boolean",
           "default": true,
           "description": "",
@@ -3196,7 +3211,8 @@
               "default": "sha-256",
               "description": "",
               "dynamic": false,
-              "enterpriseOnly": true
+              "enterpriseOnly": true,
+              "enum": ["sha-256", "sha-512"]
             },
             "user-dn-pattern": {
               "type": "string",
@@ -3289,7 +3305,7 @@
         "src-id": {
           "type": "integer",
           "default": 0,
-          "minimum": 0,
+          "minimum": 1,
           "maximum": 255,
           "description": "",
           "dynamic": true,

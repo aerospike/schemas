@@ -153,8 +153,8 @@
         "info-threads": {
           "type": "integer",
           "default": 16,
-          "minimum": 0,
-          "maximum": 2147483647,
+          "minimum": 1,
+          "maximum": 256,
           "description": "",
           "dynamic": true,
           "enterpriseOnly": false
@@ -270,8 +270,8 @@
         "proto-fd-max": {
           "type": "integer",
           "default": 15000,
-          "minimum": 0,
-          "maximum": 2147483647,
+          "minimum": 1024,
+          "maximum": 2097152,
           "description": "",
           "dynamic": true,
           "enterpriseOnly": false
@@ -1630,6 +1630,7 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
+        "required": ["storage-engine"],
         "properties": {
           "name": {
             "type": "string",
@@ -2638,7 +2639,7 @@
                 "max-write-cache": {
                   "type": "integer",
                   "default": 67108864,
-                  "minimum": 0,
+                  "minimum": 67108864,
                   "maximum": 18446744073709551615,
                   "description": "",
                   "dynamic": true,
@@ -2875,7 +2876,7 @@
                 "max-write-cache": {
                   "type": "integer",
                   "default": 67108864,
-                  "minimum": 0,
+                  "minimum": 67108864,
                   "maximum": 18446744073709551615,
                   "description": "",
                   "dynamic": true,
@@ -3105,7 +3106,7 @@
                 "max-write-cache": {
                   "type": "integer",
                   "default": 67108864,
-                  "minimum": 0,
+                  "minimum": 67108864,
                   "maximum": 18446744073709551615,
                   "description": "",
                   "dynamic": true,
@@ -3305,7 +3306,8 @@
               "default": "sha-256",
               "description": "",
               "dynamic": false,
-              "enterpriseOnly": true
+              "enterpriseOnly": true,
+              "enum": ["sha-256", "sha-512"]
             },
             "user-dn-pattern": {
               "type": "string",
@@ -3398,7 +3400,7 @@
         "src-id": {
           "type": "integer",
           "default": 0,
-          "minimum": 0,
+          "minimum": 1,
           "maximum": 255,
           "description": "",
           "dynamic": true,

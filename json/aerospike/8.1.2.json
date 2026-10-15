@@ -3179,6 +3179,13 @@
           "dynamic": false,
           "enterpriseOnly": false
         },
+        "allow-unsafe-lua": {
+          "type": "boolean",
+          "default": false,
+          "description": "",
+          "dynamic": false,
+          "enterpriseOnly": false
+        },
         "user-path": {
           "type": "string",
           "default": "/opt/aerospike/usr/udf/lua",

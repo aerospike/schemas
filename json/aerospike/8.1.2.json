@@ -3181,7 +3181,7 @@
         },
         "allow-unsafe-lua": {
           "type": "boolean",
-          "default": false,
+          "default": true,
           "description": "",
           "dynamic": false,
           "enterpriseOnly": false

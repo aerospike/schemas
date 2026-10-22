@@ -15,7 +15,7 @@
           "default": false,
           "description": "",
           "dynamic": true,
-          "enterpriseOnly": false
+          "enterpriseOnly": true
         },
         "auto-pin": {
           "type": "string",

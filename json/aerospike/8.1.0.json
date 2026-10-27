@@ -2875,7 +2875,7 @@
                 "max-write-cache": {
                   "type": "integer",
                   "default": 67108864,
-                  "minimum": 0,
+                  "minimum": 67108864,
                   "maximum": 18446744073709551615,
                   "description": "",
                   "dynamic": true,
@@ -3105,7 +3105,7 @@
                 "max-write-cache": {
                   "type": "integer",
                   "default": 67108864,
-                  "minimum": 0,
+                  "minimum": 67108864,
                   "maximum": 18446744073709551615,
                   "description": "",
                   "dynamic": true,

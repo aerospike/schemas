@@ -2498,7 +2498,7 @@
                 "default-ttl": {
                   "type": "integer",
                   "default": 0,
-                  "minimum": 0,
+                  "minimum": -1,
                   "maximum": 315360000,
                   "description": "",
                   "dynamic": true,

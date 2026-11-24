@@ -1039,6 +1039,7 @@
           "path": {
             "type": "string",
             "default": "/dev/log",
+            "maxLength": 107,
             "description": "",
             "dynamic": false,
             "enterpriseOnly": false
